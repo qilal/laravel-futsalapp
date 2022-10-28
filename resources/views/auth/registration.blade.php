@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="./sb_admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="./sb_admin/css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -37,6 +37,7 @@
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
                             <form  action="{{ route('register.custom') }}" method="POST" class="user">
+                            @csrf
                                 <div class="form-group">
                                      
                                         <input  name="name" type="text" class="form-control form-control-user" id="exampleFirstName"
@@ -60,13 +61,7 @@
                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Register Account
                                 </button>
-                                <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
-                                </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                </a>
+ 
                             </form>
                             <hr>
                             <div class="text-center">
