@@ -14,6 +14,10 @@ class AuthController extends Controller
     {
         return view('auth.login');
     }
+    public function profileadmin()
+    {
+        return view('profile.profile_admin');
+    }
     
     public function customLogin(Request $request)
     {
@@ -30,7 +34,29 @@ class AuthController extends Controller
   
         return redirect("login")->withSuccess('Login details are not valid');
     }
+    
+    public function create(array $data)
+    {
+      return User::create([
+        'name' => $data['name'],
+        'email' => $data['email'],
+        'password' => Hash::make($data['password'])
+      ]);
+    }    
+    
 
+    public function update(Request $request, User $user)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+      
+        $user->update($request->all());
+      
+        return redirect()->intended('dashboard')
+                        ->with('success','updated successfully');
+    }
     public function registration()
     {
         return view('auth.registration');
@@ -51,19 +77,10 @@ class AuthController extends Controller
         return redirect("dashboard")->withSuccess('You have signed-in');
     }
 
-    public function create(array $data)
-    {
-      return User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password'])
-      ]);
-    }    
-    
     public function dashboard()
     {
         if(Auth::check()){
-            return view('dashboard');
+            return view('dsb.dashboard_admin');
         }
   
         return redirect("login")->withSuccess('You are not allowed to access');
