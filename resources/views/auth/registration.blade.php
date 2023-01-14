@@ -36,37 +36,37 @@
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
-                            <form  action="{{ route('register.custom') }}" method="POST" class="user">
-                            @csrf
+                            <form action="{{ route('register.custom') }}" method="POST" class="user">
+                                @csrf
+                                <input id="role_id" name="role_id" type="hidden" value="3">
                                 <div class="form-group">
-                                     
-                                        <input  name="name" type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="Name">
-                                     
+
+                                    <input name="name" type="text" class="form-control form-control-user"
+                                        id="exampleFirstName" placeholder="Name">
+
                                 </div>
                                 <div class="form-group">
-                                    <input  name="email" type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Email Address">
+                                    <input name="email" type="email" class="form-control form-control-user"
+                                        id="exampleInputEmail" placeholder="Email Address">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input  name="password" type="password" class="form-control form-control-user"
+                                        <input name="password" type="password" class="form-control form-control-user"
                                             id="exampleInputPassword" placeholder="Password">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input name="password_confirmation" type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
+                                        <input name="password_confirmation" type="password"
+                                            class="form-control form-control-user" id="exampleRepeatPassword"
+                                            placeholder="Repeat Password">
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Register Account
                                 </button>
- 
+
                             </form>
                             <hr>
-                            <div class="text-center">
-                                <a class="small" href="forgot-password.html">Forgot Password?</a>
-                            </div>
+
                             <div class="text-center">
                                 <a class="small" href="login">Already have an account? Login!</a>
                             </div>

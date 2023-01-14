@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LapanganFutsal;
+use App\Http\Controllers\TypeLapanganController;
+use App\Http\Controllers\DaysController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,5 +29,7 @@ Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 Route::get('profile', [AuthController::class, 'profileadmin'])->name('profile');
 Route::put('profileedit/{user}', [AuthController::class, 'update'])->name('profileedit');
 Route::resource('lapangan', LapanganFutsal::class);
-Route::get('dashboard', [LapanganFutsal::class, 'dashboard']);
+Route::get('dashboard', [LapanganFutsal::class, 'dashboard'])->middleware('admin');
+Route::resource('typelapangan', TypeLapanganController::class);
+Route::resource('days', DaysController::class);
 

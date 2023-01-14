@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('prices', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('lapangan_id');
+            $table->foreign('lapangan_id')->references('id_lapangan_futsal')->on('lapangans');
+            $table->unsignedBigInteger('hour_id');
+            $table->foreign('hour_id')->references('id')->on('hours');
+            $table->unsignedBigInteger('day_id');
+            $table->foreign('day_id')->references('id')->on('days');
+            $table->integer('harga');
+            $table->timestamps();
+        });
+    } 
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('prices');
+    }
+};

@@ -40,6 +40,7 @@ class AuthController extends Controller
       return User::create([
         'name' => $data['name'],
         'email' => $data['email'],
+        'role_id' => $data['role_id'],
         'password' => Hash::make($data['password'])
       ]);
     }    
@@ -69,11 +70,10 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
         ]);
-
-           
-        $data = $request->all();
-        $check = $this->create($data);
-         
+        $data = $request->all(); 
+        $user = $this->create($data);
+        // dd( $check);
+        Auth::loginUsingId($user->id);
         return redirect("dashboard")->withSuccess('You have signed-in');
     }
 

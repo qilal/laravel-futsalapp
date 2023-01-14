@@ -10,7 +10,9 @@ class Lapangan extends Model
     protected $primaryKey = 'id_lapangan_futsal';
     
     protected $fillable = [
-        'nama', 'alamat', 'jumlah_lapangan', 'jumlah_bola'
+        'nama', 'alamat',
+        'jumlah_lapangan',
+        'jumlah_bola'
     ];    
 
     use HasFactory;
