@@ -38,7 +38,7 @@
                             </div>
                             <form action="{{ route('register.custom') }}" method="POST" class="user">
                                 @csrf
-                                <input id="role_id" name="role_id" type="hidden" value="3">
+                                <input id="role_id" name="role_id" type="hidden" value="1">
                                 <div class="form-group">
 
                                     <input name="name" type="text" class="form-control form-control-user"

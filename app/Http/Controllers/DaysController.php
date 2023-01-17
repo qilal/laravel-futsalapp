@@ -39,10 +39,10 @@ class DaysController extends Controller
         $request->validate([
             'nama' => 'required',
         ]);
-        $days = new Hours ();
+        $days = new Days ();
         $days->nama = $request->nama;
         $days->save();
-        return redirect()->route('hours.index');
+        return redirect()->route('day.index');
     }
 
     /**
@@ -64,7 +64,8 @@ class DaysController extends Controller
      */
     public function edit(Days $days)
     {
-        return view('days.edit_data',compact('dayss'));    }
+        return view('days.edit_data',compact('days'));   
+    }
 
     /**
      * Update the specified resource in storage.
@@ -76,7 +77,7 @@ class DaysController extends Controller
     public function update(Request $request, Days $days)
     {
         $request->validate([
-            'name' => 'required',
+            'nama' => 'required',
         ]);
       
         $typelapangan->update($request->all());
@@ -94,6 +95,6 @@ class DaysController extends Controller
     public function destroy(Days $days)
     {
         $days->delete();
-        return redirect()->route('days.index');
+        return redirect()->route('day.index');
     }
 }

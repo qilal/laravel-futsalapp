@@ -3,7 +3,7 @@
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4 container">
         <h1 class="h3 mb-0 text-gray-800">HARI</h1>
-        <a href="{{ route('days.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+        <a href="{{ route('day.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                 class="fas fa-plus fa-sm text-white-50"></i> Tambah Hari</a>
     </div>
     <div class="card shadow mb-4">
@@ -18,19 +18,19 @@
                         </tr>
                     </thead>
                     <tfoot>
-                        @foreach ($days as $days)
+                        @foreach ($days as $day)
                             <tr>
-                                <td>{{ $days->id }}</td>
-                                <td>{{ $days->nama }}</td>
+                                <td>{{ $day->id }}</td>
+                                <td>{{ $day->nama }}</td>
                                 <td class="form-inline d-flex justify-content-center">
-                                    <a href="{{ route('days.edit', $days->id) }}"
+                                    <a href="{{ route('day.edit', $day->id) }}"
                                         class="btn btn-warning btn-sm btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-pencil-alt"></i>
                                         </span>
                                         <span class="text">Edit</span>
                                     </a>
-                                    {{-- <form action="{{ route('days.destroy', $day->id) }}" method="POST">
+                                    <form action="{{ route('day.destroy', $day->id) }}" method="POST">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-danger btn-sm btn-icon-split ml-2">
@@ -39,7 +39,7 @@
                                             </span>
                                             <span class="text">Delete</span>
                                         </button>
-                                    </form> --}}
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

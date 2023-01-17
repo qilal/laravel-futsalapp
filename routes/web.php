@@ -31,5 +31,5 @@ Route::put('profileedit/{user}', [AuthController::class, 'update'])->name('profi
 Route::resource('lapangan', LapanganFutsal::class);
 Route::get('dashboard', [LapanganFutsal::class, 'dashboard'])->middleware('admin');
 Route::resource('typelapangan', TypeLapanganController::class);
-Route::resource('days', DaysController::class);
+Route::resource('day', DaysController::class);
 

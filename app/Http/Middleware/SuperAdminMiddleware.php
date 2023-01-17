@@ -6,8 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-
-class AdminMiddleware
+class SuperAdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,10 +17,9 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user()->role->name == User::ROLE_ADMIN) {
+        if ($request->user()->role->name == User::ROLE_SUPER_ADMIN) {
             return $next($request);
         }    
         abort(401);
-
     }
 }
