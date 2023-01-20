@@ -39,12 +39,12 @@ class HoursController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'hours' => 'required',
+            'jam' => 'required',
         ]);
         $hours = new Hours ();
-        $hours->hours = $request->hours;
+        $hours->jam = $request->jam;
         $hours->save();
-        return redirect()->route('hours.index');
+        return redirect()->route('hour.index');
     }
 
     /**
@@ -64,9 +64,9 @@ class HoursController extends Controller
      * @param  \App\Models\hours  $hours
      * @return \Illuminate\Http\Response
      */
-    public function edit(hours $hours)
+    public function edit(hours $hour)
     {
-        return view('hours.edit_hours',compact('hours'));    }
+        return view('hours.edit_hours',compact('hour'));    }
 
     /**
      * Update the specified resource in storage.
@@ -75,15 +75,15 @@ class HoursController extends Controller
      * @param  \App\Models\hours  $hours
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, hours $hours)
+    public function update(Request $request, hours $hour)
     {
         $request->validate([
-            'hours' => 'required',
+            'jam' => 'required',
         ]);
       
-        $hours->update($request->all());
+        $hour->update($request->all());
       
-        return redirect()->route('hours.index')
+        return redirect()->route('hour.index')
                         ->with('success','Product updated successfully');    }
 
     /**
@@ -92,9 +92,9 @@ class HoursController extends Controller
      * @param  \App\Models\hours  $hours
      * @return \Illuminate\Http\Response
      */
-    public function destroy(hours $hours)
+    public function destroy(hours $hour)
     {
-        $hours->delete();
-        return redirect()->route('hours.index');
+        $hour->delete();
+        return redirect()->route('hour.index');
     }
 }

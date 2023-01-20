@@ -17,7 +17,8 @@
                             <th class="d-flex justify-content-center">Action</th>
                         </tr>
                     </thead>
-                    <tfoot>
+
+                    <tbody>
                         @foreach ($days as $day)
                             <tr>
                                 <td>{{ $day->id }}</td>
@@ -43,8 +44,6 @@
                                 </td>
                             </tr>
                         @endforeach
-                    </tfoot>
-
                     </tbody>
                 </table>
             </div>

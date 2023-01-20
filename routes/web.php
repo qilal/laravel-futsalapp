@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LapanganFutsal;
 use App\Http\Controllers\TypeLapanganController;
 use App\Http\Controllers\DaysController;
+use App\Http\Controllers\HoursController;
+use App\Http\Controllers\PricesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +31,8 @@ Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 Route::get('profile', [AuthController::class, 'profileadmin'])->name('profile');
 Route::put('profileedit/{user}', [AuthController::class, 'update'])->name('profileedit');
 Route::resource('lapangan', LapanganFutsal::class);
-Route::get('dashboard', [LapanganFutsal::class, 'dashboard'])->middleware('admin');
+Route::get('dashboard', [LapanganFutsal::class, 'dashboard'])->middleware('checkRole:admin,super-admin');
 Route::resource('typelapangan', TypeLapanganController::class);
 Route::resource('day', DaysController::class);
-
+Route::resource('hour', hoursController::class);
+Route::resource('price', PricesController::class);

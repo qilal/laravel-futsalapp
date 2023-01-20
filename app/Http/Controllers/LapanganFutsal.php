@@ -6,11 +6,6 @@ use Illuminate\Http\Request;
 
 class LapanganFutsal extends Controller
 {
-    public function __construct()
-            {
-                    $this->middleware('admin');
-            }
-
     public function dashboard(){
 
         return view('dsb.dashboard_admin');

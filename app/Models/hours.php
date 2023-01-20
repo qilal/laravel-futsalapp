@@ -9,6 +9,6 @@ class hours extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'hours'
+        'jam'
     ];    
 }

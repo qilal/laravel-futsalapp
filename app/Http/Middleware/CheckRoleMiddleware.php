@@ -4,10 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use App\Models\User;
 
-
-class AdminMiddleware
+class CheckRoleMiddleware
 {
     /**
      * Handle an incoming request.
@@ -18,9 +16,14 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user()->role->name == User::ROLE_ADMIN) {
-            return $next($request);
-        }    
+        $roles = array_slice(func_get_args(), 2);
+
+        foreach ($roles as $role) {
+            $user = $request->user()->role->name;
+            if( $user == $role){
+                return $next($request);
+            }
+        }
         abort(401);
 
     }

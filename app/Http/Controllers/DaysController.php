@@ -62,9 +62,9 @@ class DaysController extends Controller
      * @param  \App\Models\Days  $days
      * @return \Illuminate\Http\Response
      */
-    public function edit(Days $days)
+    public function edit(Days $day)
     {
-        return view('days.edit_data',compact('days'));   
+        return view('days.edit_data',compact('day'));   
     }
 
     /**
@@ -74,15 +74,15 @@ class DaysController extends Controller
      * @param  \App\Models\Days  $days
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Days $days)
+    public function update(Request $request, Days $day)
     {
-        $request->validate([
-            'nama' => 'required',
+        $validatedData = $request->validate([
+            'nama' => 'required|min:3|max:255'
         ]);
+
+        $day->update(['nama' => $validatedData['nama']]);
       
-        $typelapangan->update($request->all());
-      
-        return redirect()->route('typelapangan.index')
+        return redirect()->route('day.index')
                         ->with('success','Product updated successfully');
     }
 
@@ -92,9 +92,9 @@ class DaysController extends Controller
      * @param  \App\Models\Days  $days
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Days $days)
+    public function destroy(Days $day)
     {
-        $days->delete();
+        $day->delete();
         return redirect()->route('day.index');
     }
 }

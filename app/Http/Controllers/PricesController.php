@@ -14,7 +14,7 @@ class PricesController extends Controller
      */
     public function index()
     {
-        //
+        return view('price.data_price');
     }
 
     /**
@@ -24,7 +24,9 @@ class PricesController extends Controller
      */
     public function create()
     {
-        //
+        return view('price.tambah_price', [
+            'lapangan' => $lapangans
+        ]);
     }
 
     /**
