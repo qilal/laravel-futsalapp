@@ -1,26 +1,76 @@
 @extends('master')
 @section('title', 'dashboard')
 @section('content')
-    <!-- Begin Page Content -->
-    <div class="container-fluid">
-
-        <!-- Page Heading -->
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                    class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
-        </div>
-
-        <!-- Content Row -->
-        <div class="row">
-
-            <div class="row">
-
-                <!-- Content Row -->
-                <div class="row">
+    <div class="row px-3">
+        <div class="col-12 col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Nama Tempat Lapangan</h6>
                 </div>
-
+                <div class="card-body">
+                    <img class="img-fluid w-100 rounded" src="./sb_admin/img/lapangan-futsal.jpg" alt="...">
+                    <div class="card mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Detail Alamat</h6>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn-info btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <span class="text">Info</span>
+                            </a>
+                            <a href="#" class="btn btn-warning btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <span class="text">Info</span>
+                            </a>
+                            <a href="#" class="btn btn-danger btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <span class="text">Info</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.container-fluid -->
-
-        @endsection
+        </div>
+        <div class="col-12 col-lg-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Nama Tempat Lapangan</h6>
+                </div>
+                <div class="card-body">
+                    <img class="img-fluid w-100 rounded" src="./sb_admin/img/lapangan-futsal.jpg" alt="...">
+                    <div class="card mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Detail Alamat</h6>
+                        </div>
+                        <div class="card-body">
+                            <a href="#" class="btn btn-info btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <span class="text">Info</span>
+                            </a>
+                            <a href="#" class="btn btn-warning btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <span class="text">Info</span>
+                            </a>
+                            <a href="#" class="btn btn-danger btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-info-circle"></i>
+                                </span>
+                                <span class="text">Info</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

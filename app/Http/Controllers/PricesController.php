@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\prices;
+use App\Models\hours;
+use App\Models\Days;
 use Illuminate\Http\Request;
+use App\Models\Lapangan;
+
+
 
 class PricesController extends Controller
 {
@@ -24,9 +29,12 @@ class PricesController extends Controller
      */
     public function create()
     {
-        return view('price.tambah_price', [
-            'lapangan' => $lapangans
-        ]);
+
+        $lapangans = Lapangan::all();
+        $days = Days::all();
+        $hours = hours::all();
+
+        return view('price.tambah_price',compact('lapangans','days','hours'));
     }
 
     /**
@@ -37,7 +45,24 @@ class PricesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request);
+        if(isset($request->hours)){
+            if (is_array($request->hours)) {
+                foreach($request->hours as $hour){
+                    foreach($request->days as $day){
+                       $price = new prices();
+                       $price->lapangan_id = $request->lapangan;
+                       $price->hour_id = $hour;
+                       $price->day_id = $day;
+                       $price->harga = $request->harga;
+                       $price->save();
+                     } 
+                }
+    
+            }
+
+        }
+
     }
 
     /**

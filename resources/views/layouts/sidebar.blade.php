@@ -1,5 +1,5 @@
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar bg-gradient-info sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
@@ -40,29 +40,20 @@
                     <span>Type Lapangan</span></a>
             </li>
 
-            <!-- <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Tambah Data Lapangan</a>
-                        <a class="collapse-item" href="cards.html">List Data Lapangan</a>
-                    </div>
-                </div> -->
-            </li>
-
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
-                    <span>Harga</span>
+                    <i class="fas fa-dollar-sign fa-2x"></i>
+                    <span>Price</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Utilities:</h6>
-                        <a class="collapse-item" href="/day">Hari</a>
-                        <a class="collapse-item" href="/hour">Jam</a>
-                        <a class="collapse-item" href="utilities-animation.html">Animations</a>
+                        <h6 class="collapse-header">Custom Price:</h6>
+                        <a class="collapse-item active" href="/day">Hari</a>
+                        <a class="collapse-item active" href="/hour">Jam</a>
+                        <a class="collapse-item active" href="/price/create">Harga</a>
                     </div>
                 </div>
             </li>
