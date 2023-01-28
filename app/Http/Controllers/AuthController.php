@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Lapangan;
 use Illuminate\Http\Request;
 use Hash;
 use Session;
@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    public function user()
+    {
+        $lapangans = Lapangan::get();
+        return view('tampilan_user.user',compact('lapangans'));
+    }
     public function index()
     {
         return view('auth.login');
@@ -28,9 +33,15 @@ class AuthController extends Controller
    
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard')
-                        ->withSuccess('Signed in');
-        }
+            if (Auth::user()->role->name =="user"){
+                return redirect()->intended('/')
+                ->withSuccess('Signed in');
+                
+            } else {
+                return redirect()->intended('dashboard')
+                ->withSuccess('Signed in');
+            }
+         }
   
         return redirect("login")->withSuccess('Login details are not valid');
     }
@@ -40,6 +51,7 @@ class AuthController extends Controller
       return User::create([
         'name' => $data['name'],
         'email' => $data['email'],
+        'nomor_tlp' => $data['nomer_tlp'],
         'role_id' => $data['role_id'],
         'password' => Hash::make($data['password'])
       ]);
@@ -74,7 +86,7 @@ class AuthController extends Controller
         $user = $this->create($data);
         // dd( $check);
         Auth::loginUsingId($user->id);
-        return redirect("dashboard")->withSuccess('You have signed-in');
+        return redirect("/")->withSuccess('You have signed-in');
     }
 
     public function dashboard()

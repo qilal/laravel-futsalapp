@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Lapangan;
+use App\Models\hours;
+use App\Models\Days;
 use Illuminate\Http\Request;
 
 class LapanganFutsal extends Controller
@@ -9,8 +11,15 @@ class LapanganFutsal extends Controller
     public function dashboard(){
 
         return view('dsb.dashboard_admin');
-        
     }
+    
+    public function tabel()
+    {
+     $hours = hours::get();
+     $days = Days::get();
+        return view('tabel',compact('hours','days') );
+    }
+    
 
     public function index()
     {

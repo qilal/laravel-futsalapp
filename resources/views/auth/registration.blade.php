@@ -49,6 +49,10 @@
                                     <input name="email" type="email" class="form-control form-control-user"
                                         id="exampleInputEmail" placeholder="Email Address">
                                 </div>
+                                <div class="form-group">
+                                    <input name="nomer_tlp" type="text" class="form-control form-control-user"
+                                        id="exampleInputEmail" placeholder="number phone">
+                                </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input name="password" type="password" class="form-control form-control-user"

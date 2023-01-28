@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id('id_lapangan_futsal');
             $table->string('nama');
             $table->string('alamat');
+            $table->string('gambar');
+            $table->string('nomor_tlp');
             $table->string('jumlah_lapangan');
             $table->string('jumlah_bola');
             $table->timestamps();
