@@ -19,7 +19,7 @@
                                 <h6 class="m-0 font-weight-bold text-primary">JUMLAH LAPANGAN
                                     : {{ $lapangan->jumlah_lapangan }}</h6>
                                 <h6 class="m-0 font-weight-bold text-primary">SEDIA BOLA : {{ $lapangan->jumlah_bola }}</h6>
-                                <a href="#" class="btn btn-info btn-icon-split">
+                                <a href="/tabel" class="btn btn-info btn-icon-split">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-info-circle"></i>
                                     </span>

@@ -15,9 +15,10 @@ class LapanganFutsal extends Controller
     
     public function tabel()
     {
+     $lapangans = Lapangan::get();
      $hours = hours::get();
      $days = Days::get();
-        return view('tabel',compact('hours','days') );
+        return view('tabel',compact('hours','days','lapangans') );
     }
     
 

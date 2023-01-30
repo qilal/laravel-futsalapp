@@ -22,7 +22,7 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown no-arrow">
-                            <a href="/registration" class="btn btn-success btn-icon-split">
+                            <a href="/registration" class="btn btn-user-daftar btn-icon-split">
 
                                 <span class="text">Daftar</span>
                             </a>

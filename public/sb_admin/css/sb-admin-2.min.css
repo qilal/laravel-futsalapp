@@ -2773,6 +2773,48 @@ fieldset:disabled a.btn {
     box-shadow: 0 0 0 .2rem rgba(151, 153, 166, .5)
 }
 
+.btn-user-daftar {
+    color: #1cc88a;
+    background-color: #ffffff85;
+    border-color: #1cc88a;
+}
+
+.btn-user-daftar:hover {
+    color: #fff;
+    background-color: #17a673;
+    border-color: #169b6b
+}
+
+.btn-user-daftar.focus,
+.btn-user-daftar:focus {
+    color: #fff;
+    background-color: #17a673;
+    border-color: #169b6b;
+    box-shadow: 0 0 0 .2rem rgba(62, 208, 156, .5)
+}
+
+.btn-user-daftar.disabled,
+.btn-user-daftar:disabled {
+    color: #fff;
+    background-color: #1cc88a;
+    border-color: #1cc88a
+}
+
+.btn-user-daftar:not(:disabled):not(.disabled).active,
+.btn-user-daftar:not(:disabled):not(.disabled):active,
+.show>.btn-user-daftar.dropdown-toggle {
+    color: #fff;
+    background-color: #169b6b;
+    border-color: #149063
+}
+
+.btn-user-daftar:not(:disabled):not(.disabled).active:focus,
+.btn-user-daftar:not(:disabled):not(.disabled):active:focus,
+.show>.btn-user-daftar.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(62, 208, 156, .5)
+}
+
+
 .btn-success {
     color: #fff;
     background-color: #1cc88a;
