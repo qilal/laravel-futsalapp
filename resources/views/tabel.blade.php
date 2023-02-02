@@ -45,7 +45,6 @@
                                     value=""disabled>
                                 <label class="btn btn-danger" for="sabtu">60000</label>
                             </td>
-
                             <td>
                                 <input class="btn-check text-nowrap" id="minggu" name="hours[]" type="checkbox"
                                     value="" checked autocomplete="off"> <label class="btn btn-user-daftar"
