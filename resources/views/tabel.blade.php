@@ -33,27 +33,28 @@
                     @foreach ($hours as $hour)
                         <tr>
                             <th scope="row">{{ $hour->jam }}</th>
-                            <td><input class="form-check-input text-nowrap" id="jam" name="hours[]" type="checkbox"
-                                    value="">
-                                45000</td>
-                            <td><input class="form-check-input text-nowrap" id="jam" name="hours[]" type="checkbox"
-                                    value="">
-                                45000</td>
-                            <td><input class="form-check-input text-nowrap" id="jam" name="hours[]" type="checkbox"
-                                    value="">
-                                45000</td>
-                            <td><input class="form-check-input text-nowrap" id="jam" name="hours[]" type="checkbox"
-                                    value="">
-                                45000</td>
-                            <td><input class="form-check-input text-nowrap" id="jam" name="hours[]" type="checkbox"
-                                    value=""checked disabled>
-                                45000</td>
-                            <td><input class="form-check-input text-nowrap" id="jam" name="hours[]" type="checkbox"
-                                    value=""disabled>
-                                60000</td>
+                            <td> <label class="btn btn-user-daftar" for="minggu"><input class="btn-check text-nowrap"
+                                        id="minggu" name="hours[]" type="checkbox" value="" autocomplete="off">
+                                    45000</td>
+                            <td> <label class="btn btn-user-daftar" for="minggu"><input class="btn-check text-nowrap"
+                                        id="minggu" name="hours[]" type="checkbox" value="" autocomplete="off">
+                                    45000</td>
+                            <td> <label class="btn btn-user-daftar" for="minggu"><input class="btn-check text-nowrap"
+                                        id="minggu" name="hours[]" type="checkbox" value="" autocomplete="off">
+                                    45000</td>
+                            <td> <label class="btn btn-user-daftar" for="minggu"><input class="btn-check text-nowrap"
+                                        id="minggu" name="hours[]" type="checkbox" value="" autocomplete="off">
+                                    45000</td>
+                            <td><label class="btn btn-success" for="jumat"><input class="btn-check text-nowrap"
+                                        id="jumat" name="hours[]" type="checkbox" value=""checked disabled>
+                                    45000</td>
+                            <td><label class="btn btn-danger" for="sabtu"><input class="btn-check text-nowrap"
+                                        id="sabtu" name="hours[]" type="checkbox" value=""disabled>
+                                    60000</td>
                             <td>
-                                <label class="btn btn-user-daftar" for="minggu"><input class="btn-check" id="minggu"
-                                        name="hours[]" type="checkbox" value="" autocomplete="off"> 80000</label>
+                                <label class="btn btn-user-daftar" for="minggu"><input class="btn-check text-nowrap"
+                                        id="minggu" name="hours[]" type="checkbox" value="" autocomplete="off">
+                                    80000</label>
                             </td>
                         </tr>
                     @endforeach
@@ -72,4 +73,4 @@
             </div>
         </div>
     </div>
-@endsection
+    @endsection
