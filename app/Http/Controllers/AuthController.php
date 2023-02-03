@@ -92,12 +92,21 @@ class AuthController extends Controller
     public function dashboard()
     {
         if(Auth::check()){
-            return view('dsb.dashboard_admin');
+            return redirect()->intended('tabel')
+                ->withSuccess('Signed in');
+            // return view('dsb.dashboard_admin');
         }
   
         return redirect("login")->withSuccess('You are not allowed to access');
     }
-    
+
+    public function tabel(){
+        $lapangans = Lapangan::get();
+        $hours = hours::get();
+        $days = Days::get();
+           return view('tabel',compact('hours','days','lapangans') );
+    }
+
     public function signOut() {
         Session::flush();
         Auth::logout();

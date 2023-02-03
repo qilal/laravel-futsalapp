@@ -6,6 +6,7 @@
             <div class="table-responsive">
                 <form action="{{ route('price.store') }}" method="post">
                     @csrf
+                    <input id="is_open" name="is_open" type="hidden" value="1">
                     <div class="col-12 mb-3 p-0">
                         <label for="lapangan">Lapangan</label>
                         <select class="form-control" name="lapangan" id="lapangan">

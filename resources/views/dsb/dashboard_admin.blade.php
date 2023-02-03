@@ -2,75 +2,50 @@
 @section('title', 'dashboard')
 @section('content')
     <div class="row px-3">
-        <div class="col-12 col-lg-6">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Nama Tempat Lapangan</h6>
-                </div>
-                <div class="card-body">
-                    <img class="img-fluid w-100 rounded" src="./sb_admin/img/lapangan-futsal.jpg" alt="...">
-                    <div class="card mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Detail Alamat</h6>
+        @foreach ($lapangans as $lapangan)
+            <div class="col-12 col-lg-6">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">{{ $lapangan->nama }}</h6>
+                        <div class="dropdown no-arrow">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                aria-labelledby="dropdownMenuLink">
+                                <div class="dropdown-header">Dropdown Header:</div>
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <a href="#" class="btn btn-info btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-info-circle"></i>
-                                </span>
-                                <span class="text">Info</span>
-                            </a>
-                            <a href="#" class="btn btn-warning btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-info-circle"></i>
-                                </span>
-                                <span class="text">Info</span>
-                            </a>
-                            <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-info-circle"></i>
-                                </span>
-                                <span class="text">Info</span>
-                            </a>
+                    </div>
+                    <div class="card-body">
+                        <img class="img-fluid w-100 rounded" src="{{ $lapangan->gambar }}" alt="...">
+                        <div class="card mb-4">
+                            <div class="card-header py-3">
+                                <a href="{{ $lapangan->alamat }}"><img style="width: 35px; high: 35px;"
+                                        src="{{ url('/img/LogoMakr-2GRsRi.png') }}" alt=""></a>
+                                <h6 class="m-0 font-weight-bold text-primary">{{ $lapangan->alamat }}</h6>
+                            </div>
+                            <div class="card-body">
+                                <h6 class="m-0 font-weight-bold text-primary">KONTAK : {{ $lapangan->nomor_tlp }}</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">JUMLAH LAPANGAN
+                                    : {{ $lapangan->jumlah_lapangan }}</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">SEDIA BOLA : {{ $lapangan->jumlah_bola }}</h6>
+                                <a href="/tabel-admin" class="btn btn-info btn-icon-split">
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-info-circle"></i>
+                                    </span>
+                                    <span class="text">Pesan Sekarang</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 col-lg-6">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Nama Tempat Lapangan</h6>
-                </div>
-                <div class="card-body">
-                    <img class="img-fluid w-100 rounded" src="./sb_admin/img/lapangan-futsal.jpg" alt="...">
-                    <div class="card mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Detail Alamat</h6>
-                        </div>
-                        <div class="card-body">
-                            <a href="#" class="btn btn-info btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-info-circle"></i>
-                                </span>
-                                <span class="text">Info</span>
-                            </a>
-                            <a href="#" class="btn btn-warning btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-info-circle"></i>
-                                </span>
-                                <span class="text">Info</span>
-                            </a>
-                            <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-info-circle"></i>
-                                </span>
-                                <span class="text">Info</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 @endsection

@@ -27,6 +27,7 @@ class prices extends Model
         'hour_id',
         'day_id',
         'harga',
+        'is_open'
     ];
     
 }

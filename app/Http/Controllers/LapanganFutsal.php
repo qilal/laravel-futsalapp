@@ -4,23 +4,35 @@ namespace App\Http\Controllers;
 use App\Models\Lapangan;
 use App\Models\hours;
 use App\Models\Days;
+use App\Models\prices;
 use Illuminate\Http\Request;
 
 class LapanganFutsal extends Controller
 {
     public function dashboard(){
-
-        return view('dsb.dashboard_admin');
+        
+        $lapangans = Lapangan::get();
+        $hours = hours::get();
+        $days = Days::get();
+        return view('dsb.dashboard_admin',compact('hours','days','lapangans'));
     }
     
-    public function tabel()
-    {
+    public function tabel(){
+     $prices = prices::get();
      $lapangans = Lapangan::get();
      $hours = hours::get();
      $days = Days::get();
-        return view('tabel',compact('hours','days','lapangans') );
+        return view('tabel',compact('hours','days','lapangans','prices') );
     }
     
+    public function tabeladmin(){
+
+        $lapangans = Lapangan::get();
+        $hours = hours::get();
+        $days = Days::get();
+        $prices = prices::get();
+           return view('dsb.tabel_admin',compact('hours','days','lapangans','prices') );
+       }
 
     public function index()
     {

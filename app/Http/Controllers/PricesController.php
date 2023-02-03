@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\prices;
 use App\Models\hours;
 use App\Models\Days;
-use Illuminate\Http\Request;
 use App\Models\Lapangan;
+use Illuminate\Http\Request;
+
 
 
 
@@ -21,7 +22,13 @@ class PricesController extends Controller
     {
         return view('price.data_price');
     }
-
+    public function tabel(){
+        $prices = prices::get();
+        $lapangans = Lapangan::get();
+        $hours = hours::get();
+        $days = Days::get();
+           return view('tabel',compact('hours','days','lapangans','prices') );
+       }
     /**
      * Show the form for creating a new resource.
      *
@@ -55,6 +62,7 @@ class PricesController extends Controller
                        $price->hour_id = $hour;
                        $price->day_id = $day;
                        $price->harga = $request->harga;
+                       $price->is_open = $request->is_open;
                        $price->save();
                      } 
                 }
@@ -62,7 +70,7 @@ class PricesController extends Controller
             }
 
         }
-
+        return redirect()->intended('dsb.tabel_admin');
     }
 
     /**

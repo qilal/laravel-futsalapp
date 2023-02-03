@@ -34,3 +34,4 @@ Route::resource('day', DaysController::class);
 Route::resource('hour', hoursController::class);
 Route::resource('price', PricesController::class);
 Route::get('tabel', [ LapanganFutsal::class, 'tabel'])->name('tabel');
+Route::get('tabel-admin', [ LapanganFutsal::class, 'tabeladmin'])->name('tabel-admin');

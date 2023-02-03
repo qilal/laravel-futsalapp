@@ -54,7 +54,7 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a href="/login" class="btn btn-success btn-icon-split">
+                            <a href="/login" class="btn btn-success">
 
                                 <span class="text">Masuk</span>
                             </a>
