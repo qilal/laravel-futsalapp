@@ -10,6 +10,10 @@
                     <input type="text" name="nama" class="form-control mb-2">
                     <label for="alamat">Alamat</label>
                     <input type="text" name="alamat" class="form-control mb-2">
+                    <label for="jumlah lapangan">Gambar Lapangan</label>
+                    <input type="image" name="gambar" class="form-control mb-2">
+                    <label for="jumlah lapangan">Nomor Whatssap</label>
+                    <input type="number" name="nomor_tlp" class="form-control mb-2">
                     <label for="jumlah lapangan">Jumlah Lapangan</label>
                     <input type="number" name="jumlah_lapangan" class="form-control mb-2">
                     <label for="jumlah bola">Jumlah Bola</label>

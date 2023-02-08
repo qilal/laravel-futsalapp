@@ -25,13 +25,21 @@ class LapanganFutsal extends Controller
         return view('tabel',compact('hours','days','lapangans','prices') );
     }
     
-    public function tabeladmin(){
+        public function gettabel(Lapangan $lapangan){
 
-        $lapangans = Lapangan::get();
+            $prices = prices::get();
+            $hours = hours::get();
+            $days = Days::get();
+           return view('tabel',compact('hours','days','lapangan','prices') );
+
+        }
+
+    public function tabeladmin(Lapangan $lapangan){
+
         $hours = hours::get();
         $days = Days::get();
         $prices = prices::get();
-           return view('dsb.tabel_admin',compact('hours','days','lapangans','prices') );
+           return view('dsb.tabel_admin',compact('hours','days','lapangan','prices') );
        }
 
     public function index()
@@ -70,6 +78,8 @@ class LapanganFutsal extends Controller
         $request->validate([
             'nama' => 'required',
             'alamat' => 'required',
+            'gambar' => 'required',
+            'nomor_tlp' => 'required',
             'jumlah_lapangan' => 'required',
             'jumlah_bola' => 'required'
         ]);

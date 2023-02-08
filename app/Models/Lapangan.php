@@ -11,8 +11,10 @@ class Lapangan extends Model
     
     protected $fillable = [
         'nama', 'alamat',
+        'gambar',
+        'nomor_tlp',
         'jumlah_lapangan',
-        'jumlah_bola'
+        'jumlah_bola',
     ];    
 
     use HasFactory;

@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Nama Lapangan</h6>
+                <h6 class="m-0 font-weight-bold text-primary">{{ $lapangan->nama }}</h6>
 
             </div>
             <table class="table">
@@ -21,25 +21,35 @@
                         <tr>
                             <th scope="row">{{ $hour->jam }}</th>
                             @foreach ($days as $day)
-                                <?php $pr = 0; ?>
+                                <?php
+                                $pr = 0;
+                                $is_open = false;
+                                ?>
                                 @foreach ($prices as $price)
-                                    <?php if ($price->hour_id == $hour->id && $price->day_id == $day->id) {?>
-                                    <?php  if ($price->is_open == false) {?>
-                                    <td>
-                                        <input class="btn-check text-nowrap" id="($hours as $hour)" name="hours[]"
-                                            type="checkbox" value=""disabled>
-                                        <label class="btn btn-danger" for="sabtu">{{ $price->harga }}</label>
-                                    </td>
-                                    <?php } else {?>
-                                    <td>
-                                        <input class="btn-check text-nowrap" id="($hours as $hour)" name="hours[]"
-                                            type="checkbox" value="" autocomplete="off"> <label
-                                            class="btn btn-user-daftar" for="($hours as $hour)">
-                                            {{ $price->harga }}</label>
-                                    </td>
-                                    <?php } ?>
-                                    <?php } ?>
+                                    <?php if ($price->lapangan_id == $lapangan->id_lapangan_futsal && $price->hour_id == $hour->id && $price->day_id == $day->id) {
+                                        if ($price->is_open == false) {
+                                            $pr = $price->harga;
+                                        } else {
+                                            $is_open = true;
+                                            $pr = $price->harga;
+                                        }
+                                    }
+                                    ?>
                                 @endforeach
+                                <?php if ($is_open == false) { ?>
+                                <td>
+                                    <input class="btn-check text-nowrap" id="($hours as $hour)" name="hours[]"
+                                        type="checkbox" value=""disabled>
+                                    <label class="btn btn-danger" for="sabtu">{{ $pr }}</label>
+                                </td>
+                                <?php } else { ?>
+                                <td>
+                                    <input class="btn-check text-nowrap" id="($hours as $hour)" name="hours[]"
+                                        type="checkbox" value="" autocomplete="off"> <label
+                                        class="btn btn-user-daftar" for="($hours as $hour)">
+                                        {{ $pr }}</label>
+                                </td>
+                                <?php } ?>
                             @endforeach
                         </tr>
                     @endforeach
