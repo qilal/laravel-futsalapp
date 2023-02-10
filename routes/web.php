@@ -18,6 +18,7 @@ use App\Http\Controllers\PricesController;
 |
 */
 Route::get('/', [AuthController::class, 'user'])->name('user');
+Route::get('userLogin', [AuthController::class, 'userLogin'])->name('userLogin');
 
 // Route::get('dashboard', [AuthController::class, 'dashboard']); 
 Route::get('login', [AuthController::class, 'index'])->name('login');

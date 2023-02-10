@@ -15,6 +15,11 @@ class AuthController extends Controller
         $lapangans = Lapangan::get();
         return view('tampilan_user.user',compact('lapangans'));
     }
+    public function userLogin()
+    {
+        $lapangans = Lapangan::get();
+        return view('tampilan_user.user_login',compact('lapangans'));
+    }
     public function index()
     {
         return view('auth.login');
@@ -34,7 +39,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             if (Auth::user()->role->name =="user"){
-                return redirect()->intended('/')
+                return redirect("userLogin")
                 ->withSuccess('Signed in');
                 
             } else {
@@ -86,13 +91,14 @@ class AuthController extends Controller
         $user = $this->create($data);
         // dd( $check);
         Auth::loginUsingId($user->id);
-        return redirect("/")->withSuccess('You have signed-in');
+        return redirect()->intended('userLogin')
+        ->withSuccess('You have signed-in');
     }
 
     public function dashboard()
     {
         if(Auth::check()){
-            return redirect()->intended('tabel')
+            return redirect()->intended('viewuser')
                 ->withSuccess('Signed in');
             // return view('dsb.dashboard_admin');
         }
@@ -100,7 +106,7 @@ class AuthController extends Controller
         return redirect("login")->withSuccess('You are not allowed to access');
     }
 
-    public function tabel(){
+    public function viewuser(){
         $lapangans = Lapangan::get();
         $hours = hours::get();
         $days = Days::get();

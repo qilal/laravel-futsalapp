@@ -58,6 +58,7 @@ class LapanganFutsal extends Controller
         $request->validate([
             'nama' => 'required',
             'alamat' => 'required',
+            'nomor_tlp' => 'required',
             'jumlah_lapangan' => 'required',
             'jumlah_bola' => 'required'
         ]);
@@ -78,6 +79,7 @@ class LapanganFutsal extends Controller
         $request->validate([
             'nama' => 'required',
             'alamat' => 'required',
+            'link_alamat' => 'required',
             'gambar' => 'required',
             'nomor_tlp' => 'required',
             'jumlah_lapangan' => 'required',
@@ -86,12 +88,15 @@ class LapanganFutsal extends Controller
         $lapangan = new Lapangan ();
         $lapangan->nama = $request->nama;
         $lapangan->alamat = $request->alamat;
+        $lapangan->link_alamat = $request->link_alamat;
+        $lapangan->gambar = $request->gambar;
+        $lapangan->nomor_tlp = $request->nomor_tlp;
         $lapangan->jumlah_lapangan = $request->jumlah_lapangan;
         $lapangan->jumlah_bola = $request->jumlah_bola;
         $lapangan->save();
         return redirect()->route('lapangan.index');
     }
-    
+   
     public function destroy(Lapangan $lapangan)
     {
         $lapangan->delete();

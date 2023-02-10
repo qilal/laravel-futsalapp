@@ -62,7 +62,7 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            {{-- <div class="sidebar-heading">
                 Addons
             </div>
 
@@ -116,7 +116,7 @@
                     and more!</p>
                 <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to
                     Pro!</a>
-            </div>
+            </div> --}}
 
         </ul>
         <!-- End of Sidebar -->

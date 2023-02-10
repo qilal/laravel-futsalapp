@@ -11,6 +11,11 @@
                     <input value="{{ $lapangan->nama }}" type="text" name="nama" class="form-control mb-2">
                     <label for="alamat">Alamat</label>
                     <input type="text" value="{{ $lapangan->alamat }}" name="alamat" class="form-control mb-2">
+                    <label for="alamat">gambar</label><br>
+                    <input type="file" value="{{ $lapangan->gambar }}" name="gambar"
+                        class="btn btn-user-daftar mb-2"><br>
+                    <label for="alamat">Nomor Whatssap</label>
+                    <input type="text" value="{{ $lapangan->nomor_tlp }}" name="nomor_tlp" class="form-control mb-2">
                     <label for="jumlah lapangan">Jumlah Lapangan</label>
                     <input type="number" value="{{ $lapangan->jumlah_lapangan }}" name="jumlah_lapangan"
                         class="form-control mb-2">

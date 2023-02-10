@@ -10,10 +10,12 @@
                     <input type="text" name="nama" class="form-control mb-2">
                     <label for="alamat">Alamat</label>
                     <input type="text" name="alamat" class="form-control mb-2">
-                    <label for="jumlah lapangan">Gambar Lapangan</label>
-                    <input type="image" name="gambar" class="form-control mb-2">
+                    <label for="jumlah lapangan">Detail Alamat</label>
+                    <input type="text" name="link_alamat" class="form-control mb-2">
+                    <label for="jumlah lapangan">Gambar Lapangan</label><br>
+                    <input type="file" name="gambar" class="btn btn-user-daftar mb-2"><br>
                     <label for="jumlah lapangan">Nomor Whatssap</label>
-                    <input type="number" name="nomor_tlp" class="form-control mb-2">
+                    <input type="text" name="nomor_tlp" class="form-control mb-2">
                     <label for="jumlah lapangan">Jumlah Lapangan</label>
                     <input type="number" name="jumlah_lapangan" class="form-control mb-2">
                     <label for="jumlah bola">Jumlah Bola</label>

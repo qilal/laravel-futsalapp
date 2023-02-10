@@ -1,5 +1,5 @@
-@extends('tampilan_user.master')
-@section('title', 'login terlebih dahulu untuk pesan')
+@extends('tampilan_user.master_user_login')
+@section('title', 'Futsal Field Rental')
 @section('content')
     <div class="row px-3">
         @foreach ($lapangans as $lapangan)

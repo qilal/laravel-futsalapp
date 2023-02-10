@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('lapangans', function (Blueprint $table) {
             $table->id('id_lapangan_futsal');
             $table->string('nama');
+            $table->string('link_alamat');
             $table->string('alamat');
             $table->string('gambar');
             $table->string('nomor_tlp');
