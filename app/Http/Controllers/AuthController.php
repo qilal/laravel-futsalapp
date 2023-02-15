@@ -113,6 +113,12 @@ class AuthController extends Controller
            return view('tabel',compact('hours','days','lapangans') );
     }
 
+    public function signOutUser() {
+        Session::flush();
+        Auth::logout();
+  
+        return Redirect('/');
+    }
     public function signOut() {
         Session::flush();
         Auth::logout();

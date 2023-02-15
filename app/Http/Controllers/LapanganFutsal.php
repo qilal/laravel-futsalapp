@@ -58,13 +58,22 @@ class LapanganFutsal extends Controller
         $request->validate([
             'nama' => 'required',
             'alamat' => 'required',
+            'link_alamat' => 'required',
             'nomor_tlp' => 'required',
             'jumlah_lapangan' => 'required',
             'jumlah_bola' => 'required'
         ]);
       
-        $lapangan->update($request->all());
-      
+        $input =  $request->all();
+        if ($image = $request->file('gambar')) {
+            $destinationPath = 'img/';  
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['gambar'] = "$profileImage";
+        }else{
+            unset($input['gambar']);
+        }
+      $lapangan->update($input);
         return redirect()->route('lapangan.index')
                         ->with('success','Product updated successfully');
     }

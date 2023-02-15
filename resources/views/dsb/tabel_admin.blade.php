@@ -42,9 +42,11 @@
                                     <?php if ($price->lapangan_id == $lapangan->id_lapangan_futsal && $price->hour_id == $hour->id && $price->day_id == $day->id) {
                                         if ($price->is_open == false) {
                                             $pr = $price->harga;
+                                            $prcheck = $price->id;
                                         } else {
                                             $is_open = true;
                                             $pr = $price->harga;
+                                            $prcheck = $price->id;
                                         }
                                     }
                                     ?>

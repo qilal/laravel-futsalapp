@@ -10,7 +10,9 @@ class Lapangan extends Model
     protected $primaryKey = 'id_lapangan_futsal';
     
     protected $fillable = [
-        'nama', 'alamat',
+        'nama', 
+        'alamat',
+        'link_alamat',
         'gambar',
         'nomor_tlp',
         'jumlah_lapangan',

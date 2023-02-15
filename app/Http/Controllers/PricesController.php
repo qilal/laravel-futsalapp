@@ -52,7 +52,6 @@ class PricesController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
         if(isset($request->hours)){
             if (is_array($request->hours)) {
                 foreach($request->hours as $hour){
@@ -70,7 +69,8 @@ class PricesController extends Controller
             }
 
         }
-        return redirect()->intended('dsb.tabel_admin');
+        // return redirect()->intended('tabel-admin');
+        return redirect()->route('tabel-admin', $request->lapangan);
     }
 
     /**

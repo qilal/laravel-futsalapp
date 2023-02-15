@@ -29,24 +29,26 @@
                                     <?php if ($price->lapangan_id == $lapangan->id_lapangan_futsal && $price->hour_id == $hour->id && $price->day_id == $day->id) {
                                         if ($price->is_open == false) {
                                             $pr = $price->harga;
+                                            $prcheck = $price->id;
                                         } else {
                                             $is_open = true;
                                             $pr = $price->harga;
+                                            $prcheck = $price->id;
                                         }
                                     }
                                     ?>
                                 @endforeach
                                 <?php if ($is_open == false) { ?>
                                 <td>
-                                    <input class="btn-check text-nowrap" id="($hours as $hour)" name="hours[]"
+                                    <input class="btn-check text-nowrap" id="{{ $prcheck }}" name="hours[]"
                                         type="checkbox" value=""disabled>
-                                    <label class="btn btn-danger" for="sabtu">{{ $pr }}</label>
+                                    <label class="btn btn-danger" for="{{ $prcheck }}">{{ $pr }}</label>
                                 </td>
                                 <?php } else { ?>
                                 <td>
-                                    <input class="btn-check text-nowrap" id="($hours as $hour)" name="hours[]"
+                                    <input class="btn-check text-nowrap" id="{{ $prcheck }}" name="hours[]"
                                         type="checkbox" value="" autocomplete="off"> <label
-                                        class="btn btn-user-daftar" for="($hours as $hour)">
+                                        class="btn btn-user-daftar" for="{{ $prcheck }}">
                                         {{ $pr }}</label>
                                 </td>
                                 <?php } ?>
