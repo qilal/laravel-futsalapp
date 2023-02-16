@@ -17,23 +17,20 @@ class LapanganFutsal extends Controller
         return view('dsb.dashboard_admin',compact('hours','days','lapangans'));
     }
     
-    public function tabel(){
+    public function tabel(Lapangan $lapangan){
      $prices = prices::get();
-     $lapangans = Lapangan::get();
      $hours = hours::get();
      $days = Days::get();
-        return view('tabel',compact('hours','days','lapangans','prices') );
+        return view('tabel_login',compact('hours','days','lapangan','prices') );
     }
     
         public function gettabel(Lapangan $lapangan){
 
-            $prices = prices::get();
             $hours = hours::get();
             $days = Days::get();
+            $prices = prices::get();
            return view('tabel',compact('hours','days','lapangan','prices') );
-
         }
-
     public function tabeladmin(Lapangan $lapangan){
 
         $hours = hours::get();

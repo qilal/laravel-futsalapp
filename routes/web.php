@@ -39,3 +39,4 @@ Route::resource('hour', hoursController::class);
 Route::resource('price', PricesController::class);
 Route::get('tabel-admin/{lapangan}', [ LapanganFutsal::class, 'tabeladmin'])->name('tabel-admin');
 Route::get ('lapangan-harga/{lapangan}', [ LapanganFutsal::class, 'gettabel'] )->name('lapangan.harga');
+Route::get ('tabel-user/{lapangan}', [ LapanganFutsal::class, 'tabel'] )->name('tabel.user');

@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Hash;
+use Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class OwnerController extends Controller
@@ -16,7 +19,7 @@ class OwnerController extends Controller
         return view('owner.tambah_owner');
     }
 
-    public function customRegistration(Request $request)
+    public function store(Request $request)
     {  
         $request->validate([
             'name' => 'required',
@@ -24,10 +27,10 @@ class OwnerController extends Controller
             'password' => 'required|min:6',
         ]);
         $data = $request->all(); 
-        $user = $this->create($data);
+        $user = $this->createOwner($data);
         // dd( $check);
         Auth::loginUsingId($user->id);
-        return redirect()->intended('userLogin')
+        return redirect()->intended('index')
         ->withSuccess('You have signed-in');
     }
 
