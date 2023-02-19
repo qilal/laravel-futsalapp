@@ -7,10 +7,17 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <div class="sidebar-brand-icon fa-pulse">
-                        <i class="fa fa-futbol"></i>
+                    <div class="btn bg-gradient-success text-gray-100 justify-content-center">
+                        <div class="mx-auto d-flex">
+
+                            {{-- d-flex text-gray-100 justify-content-center --}}
+                            <div class="fa-pulse">
+                                <i class="sidebar-brand-text mx-1 fa-futbol fas"> </i>
+                            </div>
+                            <div class="sidebar-brand-text mx-2"> Futsal APP</div>
+
+                        </div>
                     </div>
-                    <div class="sidebar-brand-text mx-3">Futsal APP</div>
                     {{-- <span>{{ Auth::user()->name }}</span> --}}
 
 

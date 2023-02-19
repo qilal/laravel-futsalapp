@@ -30,7 +30,7 @@ class OwnerController extends Controller
         $user = $this->createOwner($data);
         // dd( $check);
         Auth::loginUsingId($user->id);
-        return redirect()->intended('index')
+        return redirect()->intended('/owner')
         ->withSuccess('You have signed-in');
     }
 

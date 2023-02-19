@@ -21,7 +21,7 @@ class LapanganFutsal extends Controller
      $prices = prices::get();
      $hours = hours::get();
      $days = Days::get();
-        return view('tabel_login',compact('hours','days','lapangan','prices') );
+        return view('tampilan_user.tabel_login',compact('hours','days','lapangan','prices') );
     }
     
         public function gettabel(Lapangan $lapangan){
@@ -29,7 +29,7 @@ class LapanganFutsal extends Controller
             $hours = hours::get();
             $days = Days::get();
             $prices = prices::get();
-           return view('tabel',compact('hours','days','lapangan','prices') );
+           return view('tampilan_user.tabel',compact('hours','days','lapangan','prices') );
         }
     public function tabeladmin(Lapangan $lapangan){
 

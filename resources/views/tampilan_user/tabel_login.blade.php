@@ -10,7 +10,7 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col"><span class="mx-1">JAM</span>/<span class="m-1">HARI</span></th>
                         @foreach ($days as $day)
                             <th scope="col">{{ $day->nama }}</th>
                         @endforeach
@@ -82,15 +82,38 @@
                             </td>
                             </td> --}}
 
-            <div class="col-sm-12 col-md-6">
-                <div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search"
-                            class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
-                    <a href="#" class="btn btn-light btn-icon-split">
-                        <span class="icon text-gray-600">
-                            <i class="fas fa-cart-arrow-down"></i>
-                        </span>
-                        <span class="text">Bayar Sekarang</span>
-                    </a>
+            <div class="modal-footer">
+                <a href="#" data-toggle="modal" data-target="#Cart" class="btn btn-light btn-icon-split">
+                    <span class="icon text-gray-600">
+                        <i class="fas fa-cart-arrow-down"></i>
+                    </span>
+                    <span class="text">Bayar Sekarang</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="Cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">DETAIL PEMESANAN</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                {{-- isi detail pemesanan --}}
+                <div class="modal-body">
+                    detail identitas user
+                </div>
+                <div class="modal-body">
+                    detail pemesanan
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                    <a class="btn btn-primary" href="#">Bayar</a>
                 </div>
             </div>
         </div>

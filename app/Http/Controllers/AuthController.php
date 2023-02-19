@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function user()
+    public function user() //user belum login
     {
         $lapangans = Lapangan::get();
         return view('tampilan_user.user',compact('lapangans'));
     }
-    public function userLogin()
+    public function userLogin() // user udah login
     {
         $lapangans = Lapangan::get();
         return view('tampilan_user.user_login',compact('lapangans'));
@@ -95,23 +95,29 @@ class AuthController extends Controller
         ->withSuccess('You have signed-in');
     }
 
-    public function dashboard()
-    {
-        if(Auth::check()){
-            return redirect()->intended('viewuser')
-                ->withSuccess('Signed in');
-            // return view('dsb.dashboard_admin');
-        }
+    // public function dashboard()
+    // {
+    //     if(Auth::check()){
+    //         return redirect()->intended('viewuser')
+    //             ->withSuccess('Signed in');
+    //         // return view('dsb.dashboard_admin');
+    //     }
   
-        return redirect("login")->withSuccess('You are not allowed to access');
-    }
+    //     return redirect("login")->withSuccess('You are not allowed to access');
+    // }
 
-    public function viewuser(){
-        $lapangans = Lapangan::get();
-        $hours = hours::get();
-        $days = Days::get();
-           return view('tabel',compact('hours','days','lapangans') );
+    //   public function viewuser(){
+    //     $lapangans = Lapangan::get();
+    //     $hours = hours::get();
+    //     $days = Days::get();
+    //        return view('tabel',compact('hours','days','lapangans') );
+    // }
+
+    public function viewowner()
+    {
+        return view('owner.data_owner');
     }
+  
 
     public function signOutUser() {
         Session::flush();
