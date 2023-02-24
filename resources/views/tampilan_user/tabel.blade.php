@@ -46,10 +46,7 @@
                                 </td>
                                 <?php } else { ?>
                                 <td>
-                                    <input class="btn-check text-nowrap" id="{{ $prcheck }}" name="hours[]"
-                                        type="checkbox" value="" autocomplete="off"> <label
-                                        class="btn btn-user-daftar" for="{{ $prcheck }}">
-                                        {{ $pr }}</label>
+                                    <button class="btn btn-success">{{ $pr }}</button>
                                 </td>
                                 <?php } ?>
                             @endforeach
@@ -82,17 +79,21 @@
                             </td>
                             </td> --}}
 
-            <div class="col-sm-12 col-md-6">
-                <div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search"
-                            class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label>
-                    <a href="#" class="btn btn-light btn-icon-split">
-                        <span class="icon text-gray-600">
-                            <i class="fas fa-cart-arrow-down"></i>
-                        </span>
-                        <span class="text">Bayar Sekarang</span>
-                    </a>
+                            {{-- <div class="modal-footer">
+                                <a href="#" data-toggle="modal" data-target="#Cart" class="btn btn-light btn-icon-split">
+                                    <span class="icon text-gray-600">
+                                        <i class="fas fa-cart-arrow-down"></i>
+                                    </span>
+                                    <span class="text">Bayar Sekarang</span>
+                                    </a>
+                                </div>
+                                
+                                <div class="modal fade" id="Cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    
+                                </div> --}}
+                    </div>
                 </div>
-            </div>
+             </div>
         </div>
     </div>
 @endsection

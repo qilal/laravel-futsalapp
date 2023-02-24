@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Hash;
 use Session;
 use App\Models\User;
+use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,10 @@ class OwnerController extends Controller
 {
     public function index()
     {
-        return view('owner.data_owner');
+        $role = Role::get();
+        $user = User::get();
+        // dd($user);
+        return view('owner.data_owner',compact('user','role'));
     }
 
     public function create()

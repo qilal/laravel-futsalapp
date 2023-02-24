@@ -61,7 +61,7 @@
     </div>
 
     {{-- list --}}
-    <div class="row px-3">
+    {{-- <div class="row px-3">
         @foreach ($lapangans as $lapangan)
             <div class="col-12 col-lg-6">
                 <div class="card shadow mb-4">
@@ -128,5 +128,5 @@
                 </div>
             </div>
         @endforeach
-    </div>
+    </div> --}}
 @endsection

@@ -16,22 +16,23 @@ class LapanganFutsal extends Controller
         $days = Days::get();
         return view('dsb.dashboard_admin',compact('hours','days','lapangans'));
     }
-    
+    // user sudah login
     public function tabel(Lapangan $lapangan){
-     $prices = prices::get();
-     $hours = hours::get();
-     $days = Days::get();
+        $prices = prices::get();
+        $hours = hours::get();
+        $days = Days::get();
         return view('tampilan_user.tabel_login',compact('hours','days','lapangan','prices') );
     }
-    
-        public function gettabel(Lapangan $lapangan){
+    // user belum login
+     public function gettabel(Lapangan $lapangan){
 
             $hours = hours::get();
             $days = Days::get();
             $prices = prices::get();
            return view('tampilan_user.tabel',compact('hours','days','lapangan','prices') );
         }
-    public function tabeladmin(Lapangan $lapangan){
+    // admin
+        public function tabeladmin(Lapangan $lapangan){
 
         $hours = hours::get();
         $days = Days::get();

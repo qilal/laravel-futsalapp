@@ -15,28 +15,28 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="/dashboard">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-home"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider my-1">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
+            {{-- <div class="sidebar-heading">
+                navbar
+            </div> --}}
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link" href="/lapangan">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fa-cog fa-fw  fas"></i>
                     <span>Lapangan</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/owner">
-                    <i class="fas fa-fw fa-cog"></i>
+                    <i class="fas fa-fw fa-address-book"></i>
                     <span>Owner</span></a>
             </li>
 
@@ -47,6 +47,7 @@
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
+            <hr class="sidebar-divider my-0">
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">

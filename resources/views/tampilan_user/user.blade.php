@@ -23,6 +23,7 @@
                                 <h6 class="m-0 font-weight-bold text-primary">JUMLAH LAPANGAN
                                     : {{ $lapangan->jumlah_lapangan }}</h6>
                                 <h6 class="m-0 font-weight-bold text-primary">SEDIA BOLA : {{ $lapangan->jumlah_bola }}</h6>
+                                <div class="modal-footer">
                                 <a href="{{ route('lapangan.harga', $lapangan->id_lapangan_futsal) }}"
                                     class="btn btn-info btn-icon-split">
                                     <span class="icon text-white-50">
@@ -30,6 +31,7 @@
                                     </span>
                                     <span class="text">Pesan Sekarang</span>
                                 </a>
+                            </div>
                             </div>
                         </div>
                     </div>
