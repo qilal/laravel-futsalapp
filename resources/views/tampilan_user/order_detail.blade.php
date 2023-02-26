@@ -31,6 +31,9 @@
         <div class="col-sm-2">
         <button type="button" class="btn btn-success" id="pay-button">Bayar Sekarang</button>
         </div>
+        <div class="col-sm-2">
+            <a href="{{ route('order.getall') }}"> <button type="button" class="btn btn-success">bayar nanti</button></a>
+            </div>
     </div>
 </div>
 <script type="text/javascript">
@@ -41,7 +44,9 @@
     window.snap.pay('{{ $snapToken }}', {
         onSuccess: function(result){
         /* You may add your own implementation here */
-        alert("payment success!"); console.log(result);
+        // alert("payment success!");
+        window.location.href = '/order-all';
+        console.log(result);
         },
         onPending: function(result){
         /* You may add your own implementation here */

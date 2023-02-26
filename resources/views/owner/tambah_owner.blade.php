@@ -1,4 +1,5 @@
 @extends('master')
+@section('title', 'Rental Field Futsal | Create Owner')
 @section('content')
     <div class="container">
         <div class="card-body ">

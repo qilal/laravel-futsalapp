@@ -1,5 +1,5 @@
 @extends('master')
-
+@section('title', 'Rental Field Futsal | List Owner')
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4 container">
         <h1 class="h3 mb-0 text-gray-800">Owner Lapangan Futsal</h1>
@@ -13,22 +13,21 @@
                 <table class="table table-bordered" id="dataTable">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Alamat</th>
-                            <th>Jumlah Lapangan</th>
-                            <th>Jumlah Bola</th>
+                            <th>Nama Owner</th>
+                            <th>Email</th>
+                            <th>Nomor Whatsapp</th>
+                            <th>Nama Lapangan</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         @foreach ($user as $user)
                             <tr>
-                                <td>{{ $user->id }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->nomor_tlp }}</td>
-                                <td>{{ $user->role_id }}</td>
+                                <td></td>
+                                <td><div class="btn btn-primary btn-m"></div></td>
                             </tr>
                         @endforeach
                     </tfoot>

@@ -6,7 +6,6 @@
             <div class="table-responsive">
                 <form action="{{ route('price.store') }}" method="post">
                     @csrf
-                    <input id="is_open" name="is_open" type="hidden" value="1">
                     <div class="col-12 mb-3 p-0">
                         <label for="lapangan">Lapangan</label>
                         <select class="form-control" name="lapangan" id="lapangan">
@@ -17,30 +16,39 @@
                     </div>
                     <div class="col-12 mb-3">
                         <div class="row">
-                            <label for="jam" class="col-12 p-0">Jam</label>
+                            <label for="" class="col-12 p-0">Jam</label>
                             @foreach ($hours as $hour)
                                 <div class="form-check col-6 col-sm-4 col-md-3 col-xl-2 mb-2">
-                                    <input class="form-check-input text-nowrap" id="jam" name="hours[]"
+                                    <input class="btn-check form-check-input text-nowrap" id="{{ $hour->id }}" name="hours[]"
                                         type="checkbox" value="{{ $hour->id }}">
-                                    <label class="form-check-label" for="jam">{{ $hour->jam }}</label>
+                                    <label class="btn btn-user-daftar form-check-label" for="{{ $hour->id }}">{{ $hour->jam }}</label>
                                 </div>
                             @endforeach
                         </div>
                     </div>
                     <div class="col-12 mb-3">
                         <div class="row justify-content-xl-between">
-                            <label for="hari" class="col-12 p-0">Hari</label>
+                            <label for="" class="col-12 p-0">Hari</label>
                             @foreach ($days as $day)
                                 <div class="form-check mb-2 col-6 col-sm-4 col-md-3 col-xl-auto">
-                                    <input class="form-check-input" id="hari" type="checkbox" name="days[]"
+                                    <input class="btn-check form-check-input" id="{{ $day->nama }}" type="checkbox" name="days[]"
                                         value="{{ $day->id }}">
-                                    <label class="form-check-label" for="hari">{{ $day->nama }}</label>
+                                    <label class="btn btn-user-daftar form-check-label" for="{{ $day->nama }}">{{ $day->nama }}</label>
                                     <br>
                                 </div>
                             @endforeach
                         </div>
                     </div>
-
+                    <div class="col-12 mb-3 p-0">
+                        <h6></h6>
+                        <label for="" class="col-12 p-0">Status</label>
+                        <div class="mb-2 col-6 col-sm-4 col-md-3 col-xl-auto">
+                            <input class="btn-check" id="tutup" name="is_open" type="radio" value="0">
+                            <label class="btn btn-outline-danger" for="tutup">TUTUP</label>
+                            <input class="btn-check" id="buka" name="is_open" type="radio" value="1">
+                            <label class="btn btn-user-daftar" for="buka">BUKA</label>
+                        </div>
+                    </div>
                     <div class="col-12 mb-3 p-0">
                         <label for="harga">Harga</label>
                         <input type="integer" name="harga" class="form-control mb-2">

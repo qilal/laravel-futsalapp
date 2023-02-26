@@ -31,7 +31,11 @@ Route::post('custom-registration', [AuthController::class, 'customRegistration']
 Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 Route::get('signoutuser', [AuthController::class, 'signOutUser'])->name('signoutuser');
 Route::get('profile', [AuthController::class, 'profileadmin'])->name('profile');
+Route::get('edit', [AuthController::class, 'profileedit'])->name('edit');
 Route::put('profileedit/{user}', [AuthController::class, 'update'])->name('profileedit');
+Route::get('profileuser', [AuthController::class, 'profileuser'])->name('profileuser');
+Route::get('edituser', [AuthController::class, 'profileeditUser'])->name('edituser');
+Route::put('profileeditUser/{user}', [AuthController::class, 'updateUser'])->name('profileeditUser');
 Route::resource('owner', OwnerController::class);
 Route::resource('lapangan', LapanganFutsal::class);
 Route::get('dashboard', [LapanganFutsal::class, 'dashboard'])->middleware('checkRole:admin,super-admin');

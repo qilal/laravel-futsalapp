@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>Rental Field Futsal | Register</title>
 
     <!-- Custom fonts for this template-->
     <link href="./sb_admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -39,6 +39,7 @@
                             <form action="{{ route('register.custom') }}" method="POST" class="user">
                                 @csrf
                                 <input id="role_id" name="role_id" type="hidden" value="3">
+                                <input type="hidden" name="foto" id="foto" value="jpg">
                                 <div class="form-group">
 
                                     <input name="name" type="text" class="form-control form-control-user"

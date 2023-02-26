@@ -13,7 +13,7 @@ class OwnerController extends Controller
     public function index()
     {
         $role = Role::get();
-        $user = User::get();
+        $user = User::where('role_id','LIKE',"2")->get();
         // dd($user);
         return view('owner.data_owner',compact('user','role'));
     }

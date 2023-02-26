@@ -29,6 +29,7 @@
                                 <?php
                                 $pr = 0;
                                 $is_open = false ;
+                                $prcheck = null ;
                                 ?>
                                 @foreach ($prices as $price)
                                     <?php if ($price->lapangan_id == $lapangan->id_lapangan_futsal && $price->hour_id == $hour->id && $price->day_id == $day->id) {
@@ -43,10 +44,10 @@
                                     }
                                     ?>
                                 @endforeach
-                                <?php if ($is_open == false) { ?>
+                                <?php if ($is_open == false || $prcheck == null) { ?>
                                 <td>
                                     <input class="btn-check text-nowrap" id="$prcheck" name="id"
-                                        type="checkbox" value=""disabled>
+                                        type="checkbox" value="{{ $prcheck }}"disabled>
                                     <label class="btn btn-danger" for="{{ $prcheck }}">{{ $pr }}</label>
                                 </td>
                                 <?php } else { ?>

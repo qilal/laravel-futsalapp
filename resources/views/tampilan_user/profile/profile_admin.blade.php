@@ -53,11 +53,11 @@
                         
                         <div class="col-6 mb-3">
                             <div class="d-flex justify-content-start">
-                              <a class="btn text-gray-600" href="edit"><i class="fas fa-sm fa-fw fa-edit fa-lg mr-2"></i>Change</a>
+                              <a class="btn text-gray-600" href="edituser"><i class="fas fa-sm fa-fw fa-edit fa-lg mr-2"></i>Change</a>
                             </div>
                           </div>
                           <div class="col-6 mb-3">
-                          <a href="dashboard" class="btn text-gray-600"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i> Back</a>
+                          <a href="userLogin" class="btn text-gray-600"><i class="fas fa-sign-out-alt fa-sm fa-fw mr-2"></i> Back</a>
                           </div>
                       </div>
                     </div>

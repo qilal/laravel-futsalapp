@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Auth;
 use App\Models\Lapangan;
 use App\Models\hours;
 use App\Models\Days;
@@ -11,7 +12,7 @@ class LapanganFutsal extends Controller
 {
     public function dashboard(){
         
-        $lapangans = Lapangan::get();
+        $lapangans = Lapangan::where('id_lapangan_futsal',Auth::user()->lapangan_id)->get();
         $hours = hours::get();
         $days = Days::get();
         return view('dsb.dashboard_admin',compact('hours','days','lapangans'));
@@ -96,7 +97,13 @@ class LapanganFutsal extends Controller
         $lapangan->nama = $request->nama;
         $lapangan->alamat = $request->alamat;
         $lapangan->link_alamat = $request->link_alamat;
-        $lapangan->gambar = $request->gambar;
+        if ($image = $request->file('gambar')) {
+            $destinationPath = 'img/';  
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $lapangan->gambar = $profileImage;
+        }
+        
         $lapangan->nomor_tlp = $request->nomor_tlp;
         $lapangan->jumlah_lapangan = $request->jumlah_lapangan;
         $lapangan->jumlah_bola = $request->jumlah_bola;

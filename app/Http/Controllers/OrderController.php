@@ -33,7 +33,7 @@ class OrderController extends Controller
             $orderdetail->save();
         }
         \Cart::clear();
-        return redirect()->route('order.getall');
+        return redirect()->route('order.detail',$order->id);
         // dd($snapToken);
     }
 
@@ -71,5 +71,15 @@ class OrderController extends Controller
     {
         $serverkey = env('MIDTRANS_SERVER_KEY');
         $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverkey);
+        if ($hashed == $request->signature_key) {
+            if ($request->transaction_status == "capture") {
+                $order = Order::find($request->order_id);
+                $order->update(['status' => 'Paid']);
+
+                // return redirect()->route('order.getall');
+            }
+        }
+    
     }
+
 }

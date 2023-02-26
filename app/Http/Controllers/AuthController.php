@@ -24,9 +24,25 @@ class AuthController extends Controller
     {
         return view('auth.login');
     }
+    
+    public function profileuser()
+    {
+        return view('tampilan_user.profile.profile_admin');
+    }
+
+    public function profileeditUser()
+    {
+        return view('tampilan_user.profile.profile_edit');
+    }
+
     public function profileadmin()
     {
         return view('profile.profile_admin');
+    }
+    
+    public function profileedit()
+    {
+        return view('profile.profile_edit');
     }
     
     public function customLogin(Request $request)
@@ -68,11 +84,21 @@ class AuthController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
+            'nomor_tlp' => 'required',
         ]);
       
-        $user->update($request->all());
+        $input =  $request->all();
+        if ($image = $request->file('foto')) {
+            $destinationPath = 'img/';  
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['foto'] = "$profileImage";
+        }else{
+            unset($input['foto']);
+        }
+        $user->update($input);
       
-        return redirect()->intended('dashboard')
+        return redirect()->intended('profile')
                         ->with('success','updated successfully');
     }
     public function registration()

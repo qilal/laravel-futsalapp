@@ -1,10 +1,10 @@
 @extends('master')
-
+@section('title', 'Rental Field Futsal | Create Field')
 @section('content')
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-                <form action="{{ route('lapangan.store') }}" method="post">
+                <form action="{{ route('lapangan.store') }}" enctype="multipart/form-data" method="post">
                     @csrf
                     <label for="name">Nama</label>
                     <input type="text" name="nama" class="form-control mb-2">

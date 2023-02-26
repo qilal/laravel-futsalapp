@@ -1,5 +1,5 @@
 @extends('master')
-
+@section('title', 'Rental Field Futsal | List Field')
 @section('content')
     <div class="d-sm-flex align-items-center justify-content-between mb-4 container">
         <h1 class="h3 mb-0 text-gray-800">List Data Lapangan</h1>

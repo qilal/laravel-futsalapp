@@ -1,6 +1,6 @@
                 <!-- Topbar -->
 
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <nav class="navbar navbar-expand-lg navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
                     <div class="btn bg-gradient-success text-gray-100 justify-content-center">

@@ -3271,6 +3271,7 @@ fieldset:disabled a.btn {
 
 .btn-outline-danger {
     color: #e74a3b;
+    background-color: #ffffff85;
     border-color: #e74a3b
 }
 
@@ -3280,7 +3281,7 @@ fieldset:disabled a.btn {
     border-color: #e74a3b
 }
 
-.btn-outline-danger.focus,
+.btn-check:focus+.btn-outline-danger,
 .btn-outline-danger:focus {
     box-shadow: 0 0 0 .2rem rgba(231, 74, 59, .5)
 }
@@ -3291,17 +3292,21 @@ fieldset:disabled a.btn {
     background-color: transparent
 }
 
-.btn-outline-danger:not(:disabled):not(.disabled).active,
-.btn-outline-danger:not(:disabled):not(.disabled):active,
-.show>.btn-outline-danger.dropdown-toggle {
+.btn-check:checked+.btn-outline-danger,
+.btn-check:active+.btn-outline-danger,
+.btn-outline-danger:active,
+.btn-outline-danger.active,
+.btn-outline-danger.dropdown-toggle.show {
     color: #fff;
     background-color: #e74a3b;
     border-color: #e74a3b
 }
 
-.btn-outline-danger:not(:disabled):not(.disabled).active:focus,
-.btn-outline-danger:not(:disabled):not(.disabled):active:focus,
-.show>.btn-outline-danger.dropdown-toggle:focus {
+.btn-check:checked+.btn-outline-danger:focus,
+.btn-check:active+.btn-outline-danger:focus,
+.btn-outline-danger:active:focus,
+.btn-outline-danger.active:focus,
+.btn-outline-danger.dropdown-toggle.show:focus {
     box-shadow: 0 0 0 .2rem rgba(231, 74, 59, .5)
 }
 
@@ -7294,6 +7299,13 @@ button.bg-dark:hover {
 .rounded-lg {
     border-radius: .3rem !important
 }
+
+.bulat-sedang {
+    height: 100px !important;
+    width: 100px !important;
+    border-radius: 50% !important
+}
+
 
 .rounded-circle {
     border-radius: 50% !important

@@ -1,5 +1,5 @@
 @extends('master')
-@section('title', 'dashboard')
+@section('title', 'Rental Field Futsal | Dashboard')
 @section('content')
     <div class="row px-3">
         @foreach ($lapangans as $lapangan)
