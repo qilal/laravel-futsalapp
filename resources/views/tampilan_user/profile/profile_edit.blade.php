@@ -18,7 +18,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
-        <form  action="{{ route('profileeditUser', Auth::user()->id) }}" method="POST" class="user">
+        <form  action="{{ route('profileeditUser', Auth::user()->id) }}" enctype="multipart/form-data" method="POST" class="user">
             @csrf
             @method('PUT') 
     <table  class="table table-bordered"> 

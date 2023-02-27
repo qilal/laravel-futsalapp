@@ -11,8 +11,12 @@ use Illuminate\Http\Request;
 class LapanganFutsal extends Controller
 {
     public function dashboard(){
-        
+        if (Auth::user()->role_id == 1)
+        {
+        $lapangans = Lapangan::get();
+        }else{
         $lapangans = Lapangan::where('id_lapangan_futsal',Auth::user()->lapangan_id)->get();
+        }
         $hours = hours::get();
         $days = Days::get();
         return view('dsb.dashboard_admin',compact('hours','days','lapangans'));
@@ -26,7 +30,6 @@ class LapanganFutsal extends Controller
     }
     // user belum login
      public function gettabel(Lapangan $lapangan){
-
             $hours = hours::get();
             $days = Days::get();
             $prices = prices::get();
@@ -34,7 +37,6 @@ class LapanganFutsal extends Controller
         }
     // admin
         public function tabeladmin(Lapangan $lapangan){
-
         $hours = hours::get();
         $days = Days::get();
         $prices = prices::get();
@@ -43,7 +45,12 @@ class LapanganFutsal extends Controller
 
     public function index()
     {
+        if (Auth::user()->role_id == 1)
+        {
         $lapangans = Lapangan::get();
+        }else{
+        $lapangans = Lapangan::where('id_lapangan_futsal',Auth::user()->lapangan_id)->get();
+        }
         return view('dsb.data_lapangan',compact('lapangans'));  // $lapangans -> compact('lapangans')
     }
 
@@ -72,7 +79,7 @@ class LapanganFutsal extends Controller
         }else{
             unset($input['gambar']);
         }
-      $lapangan->update($input);
+        $lapangan->update($input);
         return redirect()->route('lapangan.index')
                         ->with('success','Product updated successfully');
     }

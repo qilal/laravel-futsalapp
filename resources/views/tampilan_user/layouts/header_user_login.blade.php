@@ -7,7 +7,7 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <div class="btn bg-gradient-success text-gray-100 justify-content-center">
+                    <a href="/userLogin" class="btn bg-gradient-success text-gray-100 justify-content-center">
                         <div class="mx-auto d-flex">
 
                             {{-- d-flex text-gray-100 justify-content-center --}}
@@ -17,7 +17,7 @@
                             <div class="sidebar-brand-text mx-2"> Futsal APP</div>
 
                         </div>
-                    </div>
+                    </a>
                     {{-- <span>{{ Auth::user()->name }}</span> --}}
 
 
@@ -53,11 +53,19 @@
                             </div>
                         </li>
                         <div class="modal-footer ">
-                            <a href="{{ route('cart.list') }}" class="btn btn-light btn-icon-split">
+                            <a href="/order-all" class="btn btn-light btn-icon-split">
+                                <span class="text">Riwayat Order</span>
                                 <span class="icon text-gray-600">
                                     <i class="fas fa-cart-arrow-down"></i>
                                 </span>
-                                {{-- <span class="text">Bayar Sekarang</span> --}}
+                            </a>
+                        </div>
+                        <div class="modal-footer ">
+                            <a href="{{ route('cart.list') }}" class="btn btn-light btn-icon-split">
+                                <span class="text">Keranjang</span>
+                                <span class="icon text-gray-600">
+                                    <i class="fas fa-cart-plus fa-cart-arrow-down"></i>
+                                </span>
                             </a>
                         </div>
                     
@@ -76,7 +84,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span
                                     class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->email }}</span>
-                                <img class="img-profile rounded-circle" src="./sb_admin/img/bolla.jpg">
+                                <img class="img-profile rounded-circle" src="/img/{{ Auth::user()->foto }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

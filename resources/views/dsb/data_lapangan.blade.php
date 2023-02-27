@@ -1,21 +1,27 @@
 @extends('master')
 @section('title', 'Rental Field Futsal | List Field')
 @section('content')
-    <div class="d-sm-flex align-items-center justify-content-between mb-4 container">
-        <h1 class="h3 mb-0 text-gray-800">List Data Lapangan</h1>
-        <a href="{{ route('lapangan.create') }}"
-            class="d-none d-sm-inline-block bg-gradient-info btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-plus fa-sm text-white-50"></i> Tambah Data Lapangan</a>
-    </div>
-    <div class="card shadow mb-4">
+
+<?php if (Auth::user()->role_id == 1)
+{ ?>
+<div class="d-sm-flex align-items-center justify-content-between mb-4 container">
+    <h1 class="h3 mb-0 text-gray-800">List Data Lapangan</h1>
+    <a href="{{ route('lapangan.create') }}"
+        class="d-none d-sm-inline-block bg-gradient-info btn btn-sm btn-primary shadow-sm"><i
+            class="fas fa-plus fa-sm text-white-50"></i> Tambah Data Lapangan</a>
+</div>
+<?php } ?>
+
+<div class="card shadow mb-4">
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable">
-                    <thead>
+                    <thead class="thead-light">
                         <tr>
                             <th>No</th>
                             <th>Nama</th>
                             <th>Alamat</th>
+                            <th>Gambar Lapangan</th>
                             <th>Jumlah Lapangan</th>
                             <th>Jumlah Bola</th>
                             <th>Action</th>
@@ -27,10 +33,11 @@
                                 <td>{{ $lapangan->id_lapangan_futsal }}</td>
                                 <td>{{ $lapangan->nama }}</td>
                                 <td><a href="{{ $lapangan->link_alamat }}"><img style="width: 35px; high: 35px;"
-                                            src="{{ url('/img/LogoMakr-2GRsRi.png') }}" alt=""></a></td>
+                                            src="{{ url('/img/LogoMakr-2GRsRi.png') }}" alt=""></a> <br>{{ $lapangan->alamat }}</td>
+                                <td> <img src="/img/{{ $lapangan->gambar }}" alt="Gambar Lapangan" width="100px" ></td>
                                 <td>{{ $lapangan->jumlah_lapangan }}</td>
                                 <td>{{ $lapangan->jumlah_bola }}</td>
-                                <td class="form-inline">
+                                <td>
                                     <a href="{{ route('lapangan.edit', $lapangan->id_lapangan_futsal) }}"
                                         class="btn btn-warning btn-sm btn-icon-split">
                                         <span class="icon text-white-50">
@@ -38,6 +45,8 @@
                                         </span>
                                         <span class="text">Edit</span>
                                     </a>
+                                    <?php if (Auth::user()->role_id == 1)
+                                        { ?>
                                     <form action="{{ route('lapangan.destroy', $lapangan->id_lapangan_futsal) }}"
                                         method="POST">
                                         @csrf
@@ -49,6 +58,7 @@
                                             <span class="text">Delete</span>
                                         </button>
                                     </form>
+                                    <?php } ?>
                                 </td>
                             </tr>
                         @endforeach

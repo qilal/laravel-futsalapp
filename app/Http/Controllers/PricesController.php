@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use LapanganFutsal;
+use Auth;
 use App\Models\prices;
 use App\Models\hours;
 use App\Models\Days;
@@ -36,12 +38,16 @@ class PricesController extends Controller
      */
     public function create()
     {
-
-        $lapangans = Lapangan::all();
+        if (Auth::user()->role_id == 1)
+        {
+        $lapangans = Lapangan::get();
+        }else{
+        $lapangans = Lapangan::where('id_lapangan_futsal',Auth::user()->lapangan_id)->get();
+        }
         $days = Days::all();
         $hours = hours::all();
-
-        return view('price.tambah_price',compact('lapangans','days','hours'));
+        $prices = prices::all();
+        return view('price.tambah_price',compact('lapangans','days','hours','prices'));
     }
 
     /**
@@ -90,9 +96,18 @@ class PricesController extends Controller
      * @param  \App\Models\prices  $prices
      * @return \Illuminate\Http\Response
      */
-    public function edit(prices $prices)
+    public function edit(prices $price)
     {
-        //
+        // dd($prices->is_open);
+        if (Auth::user()->role_id == 1)
+        {
+        $lapangans = Lapangan::get();
+        }else{
+        $lapangans = Lapangan::where('id_lapangan_futsal',Auth::user()->lapangan_id)->get();
+        }
+        $days = Days::all();
+        $hours = hours::all();
+        return view('price.edit_price',compact('lapangans','days','hours','price'));
     }
 
     /**
@@ -102,9 +117,22 @@ class PricesController extends Controller
      * @param  \App\Models\prices  $prices
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, prices $prices)
+    public function update(Request $request, prices $price)
     {
-        //
+        {
+            // $request->validate([
+            //     'lapangan' => 'required',
+            //     '' => 'required',
+            // ]);
+                
+            $price->update([
+                'harga' => $request->harga,
+                'is_open' => $request->is_open
+            ]);
+          
+            return redirect()->route('tabel-admin',$price->lapangan_id)
+                            ->with('success','Product updated successfully');    
+            }
     }
 
     /**
@@ -115,6 +143,8 @@ class PricesController extends Controller
      */
     public function destroy(prices $prices)
     {
-        //
+        $lapangan = Lapangan::get();
+        $prices->delete();
+        return redirect()->route('typelapangan.index');
     }
 }

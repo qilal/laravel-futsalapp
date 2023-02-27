@@ -86,7 +86,7 @@ class AuthController extends Controller
             'email' => 'required',
             'nomor_tlp' => 'required',
         ]);
-      
+        
         $input =  $request->all();
         if ($image = $request->file('foto')) {
             $destinationPath = 'img/';  
@@ -101,6 +101,30 @@ class AuthController extends Controller
         return redirect()->intended('profile')
                         ->with('success','updated successfully');
     }
+    
+    public function updateUser(Request $request, User $user)
+    {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'nomor_tlp' => 'required',
+        ]);
+        
+        $input =  $request->all();
+        if ($image = $request->file('foto')) {
+            $destinationPath = 'img/';  
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['foto'] = "$profileImage";
+        }else{
+            unset($input['foto']);
+        }
+        $user->update($input);
+      
+        return redirect()->intended('profileuser')
+                        ->with('success','updated successfully');
+    }
+    
     public function registration()
     {
         return view('auth.registration');

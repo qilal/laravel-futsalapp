@@ -20,12 +20,9 @@
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider my-1">
 
             <!-- Heading -->
-            {{-- <div class="sidebar-heading">
-                navbar
-            </div> --}}
+            
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -33,22 +30,52 @@
                     <i class="fa-cog fa-fw  fas"></i>
                     <span>Lapangan</span></a>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link" href="/owner">
-                    <i class="fas fa-fw fa-address-book"></i>
-                    <span>Owner</span></a>
+                <a class="nav-link" href="/orderdetail">
+                    <i class="fa-cog fa-fw  fas"></i>
+                    <span>Laporan Order</span></a>
             </li>
-
-            <li class="nav-item">
+            <?php if (Auth::user()->role_id == 1)
+            { ?>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="/owner">
+                        <i class="fas fa-fw fa-address-book"></i>
+                        <span>Owner</span></a>
+                </li>
+        
+            <?php } ?>
+            
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="/typelapangan">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Type Lapangan</span></a>
+            </li> --}}
+        
+            <li class="nav-item">
+                <a class="nav-link" href="/price/create">
+                    <i class="fas fa-dollar-sign fa-2x"></i>
+                    <span>Harga</span></a>
             </li>
+            <?php if (Auth::user()->role_id == 1)
+            { ?>
+                <hr class="sidebar-divider my-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/day">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Hari</span></a>
+                </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="/hour">
+                        <i class="fas fa-fw fa-cog"></i>
+                        <span>Jam</span></a>
+                </li>
+            <?php } ?>
+            
             <!-- Nav Item - Utilities Collapse Menu -->
             <hr class="sidebar-divider my-0">
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-dollar-sign fa-2x"></i>
@@ -63,7 +90,7 @@
                         <a class="collapse-item active" href="/price/create">Harga</a>
                     </div>
                 </div>
-            </li>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider">

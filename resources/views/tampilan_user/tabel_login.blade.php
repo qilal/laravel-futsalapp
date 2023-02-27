@@ -1,5 +1,5 @@
 @extends('tampilan_user.master_user_login')
-
+@section('title', 'Futsal Field Rental | Jadwal Booking')
 @section('content')
     <div class="container-fluid">
         @if($errors->any())

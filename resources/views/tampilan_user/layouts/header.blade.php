@@ -3,7 +3,7 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <div class="btn bg-gradient-success text-gray-100 justify-content-center">
+                    <a href="/" class="btn bg-gradient-success text-gray-100 justify-content-center">
                         <div class="mx-auto d-flex">
 
                             {{-- d-flex text-gray-100 justify-content-center --}}
@@ -13,7 +13,7 @@
                             <div class="sidebar-brand-text mx-2"> Futsal APP</div>
 
                         </div>
-                    </div>
+                    </a>
 
                     {{-- <span>{{ Auth::user()->name }}</span> --}}
 

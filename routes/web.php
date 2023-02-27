@@ -10,6 +10,7 @@ use App\Http\Controllers\HoursController;
 use App\Http\Controllers\PricesController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderDetailController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +44,10 @@ Route::resource('typelapangan', TypeLapanganController::class);
 Route::resource('day', DaysController::class);
 Route::resource('hour', hoursController::class);
 Route::resource('price', PricesController::class);
+Route::get('price/{price}/edit', [PricesController::class, 'edit'])->name('price.edit');
+
+//detail order admin
+route::resource('orderdetail', OrderDetailController::class);
 
 // get tabel
 Route::get('tabel-admin/{lapangan}', [ LapanganFutsal::class, 'tabeladmin'])->name('tabel-admin');

@@ -32,7 +32,7 @@
         <button type="button" class="btn btn-success" id="pay-button">Bayar Sekarang</button>
         </div>
         <div class="col-sm-2">
-            <a href="{{ route('order.getall') }}"> <button type="button" class="btn btn-success">bayar nanti</button></a>
+            <a href="{{ route('order.getall') }}"> <button type="button" class="btn btn-warning">bayar nanti</button></a>
             </div>
     </div>
 </div>

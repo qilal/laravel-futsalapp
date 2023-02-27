@@ -1,6 +1,7 @@
 @extends('master')
 @section('title', 'Rental Field Futsal | Dashboard')
 @section('content')
+    
     <div class="row px-3">
         @foreach ($lapangans as $lapangan)
             <div class="col-12 col-lg-6">
@@ -69,4 +70,5 @@
             </div>
         @endforeach
     </div>
+
 @endsection

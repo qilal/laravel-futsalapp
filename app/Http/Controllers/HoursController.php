@@ -84,7 +84,8 @@ class HoursController extends Controller
         $hour->update($request->all());
       
         return redirect()->route('hour.index')
-                        ->with('success','Product updated successfully');    }
+                        ->with('success','Product updated successfully');    
+        }
 
     /**
      * Remove the specified resource from storage.
