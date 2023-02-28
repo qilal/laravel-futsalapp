@@ -41,6 +41,11 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome To Rental Field Futsal!</h1>
                                     </div>
+                                    @if ($message = Session::get('success'))
+                                        <div class="alert alert-info" role="alert">
+                                        {{ $message }}
+                                        </div>
+                                    @endif
                                     <form class="user" method="POST" action="{{ route('login.custom') }}">
                                         @csrf
                                         <div class="form-group">

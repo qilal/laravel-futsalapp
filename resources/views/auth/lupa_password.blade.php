@@ -40,11 +40,12 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
                                     </div>
-                                    <form class="user" action="{{ route('ubah-password') }}">
+                                    <form class="user" action="{{ route('forget.password.post') }}"  method="POST">
+                                        @csrf
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                                            <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                                         </div>
-                                        <button href="login.html" class="btn btn-primary btn-user btn-block">
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Reset Password
                                         </button>
                                     </form>
@@ -70,10 +71,10 @@
        <!-- Bootstrap core JavaScript-->
        <script src="./sb_admin/vendor/jquery/jquery.min.js"></script>
        <script src="./sb_admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-   
+
        <!-- Core plugin JavaScript-->
        <script src="./sb_admin/vendor/jquery-easing/jquery.easing.min.js"></script>
-   
+
        <!-- Custom scripts for all pages-->
        <script src="./sb_admin/js/sb-admin-2.min.js"></script>
 

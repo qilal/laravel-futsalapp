@@ -24,12 +24,12 @@ use App\Http\Controllers\OrderDetailController;
 Route::get('/', [AuthController::class, 'user'])->name('user');
 Route::get('userLogin', [AuthController::class, 'userLogin'])->name('userLogin');
 
-// Route::get('dashboard', [AuthController::class, 'dashboard']); 
+// Route::get('dashboard', [AuthController::class, 'dashboard']);
 //login register logout change-password
 Route::get('login', [AuthController::class, 'index'])->name('login');
-Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login.custom'); 
+Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login.custom');
 Route::get('registration', [AuthController::class, 'registration'])->name('register-user');
-Route::post('custom-registration', [AuthController::class, 'customRegistration'])->name('register.custom'); 
+Route::post('custom-registration', [AuthController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 Route::get('signoutuser', [AuthController::class, 'signOutUser'])->name('signoutuser');
 
@@ -75,3 +75,8 @@ Route::post('checkout', [OrderController::class, 'checkout'])->name('order.check
 Route::get('order-all', [OrderController::class, 'GetAllOrder'])->name('order.getall');
 Route::get ('order-detail/{order}', [OrderController::class, 'GetDetailOrder'] )->name('order.detail');
 Route::post('mitrans-callback', [OrderController::class, 'callback'])->name('mitrans.callback');
+
+Route::get('forget-password', [AuthController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [AuthController::class, 'submitForgetPasswordForm'])->name('forget.password.post');
+Route::get('reset-password/{token}', [AuthController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [AuthController::class, 'submitResetPasswordForm'])->name('reset.password.post');
