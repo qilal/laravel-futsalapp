@@ -8,6 +8,9 @@ use Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
+use Mail; 
+use Illuminate\Support\Str;
+
 class AuthController extends Controller
 {
     public function user() //user belum login
@@ -181,5 +184,33 @@ class AuthController extends Controller
   
         return Redirect('login');
     }
+
+    public function forgate(){
+        
+        return view('auth.lupa_password');
+
+    }
+
+    // public function submitforgate(Request $request )
+    // {
+    //     $request->validate([
+    //         'email' => 'required|email|exists:users',
+    //     ]);
+
+    //     $token = Str::random(64);
+
+    //     DB::table('password_resets')->insert([
+    //         'email' => $request->email, 
+    //         'token' => $token, 
+    //         'created_at' => Carbon::now()
+    //       ]);
+
+    //     Mail::send('email.forgetPassword', ['token' => $token], function($message) use($request){
+    //         $message->to($request->email);
+    //         $message->subject('Reset Password');
+    //     });
+
+    //     return back()->with('message', 'We have e-mailed your password reset link!');
+    // }
 }
 

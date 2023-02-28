@@ -1,5 +1,5 @@
-        <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar bg-gradient-info sidebar-dark accordion" id="accordionSidebar">
+              <!-- Sidebar -->
+        <ul class="no-print navbar-nav bg-gradient-primary sidebar bg-gradient-info sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">

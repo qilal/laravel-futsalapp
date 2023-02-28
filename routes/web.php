@@ -25,18 +25,28 @@ Route::get('/', [AuthController::class, 'user'])->name('user');
 Route::get('userLogin', [AuthController::class, 'userLogin'])->name('userLogin');
 
 // Route::get('dashboard', [AuthController::class, 'dashboard']); 
+//login register logout change-password
 Route::get('login', [AuthController::class, 'index'])->name('login');
 Route::post('custom-login', [AuthController::class, 'customLogin'])->name('login.custom'); 
 Route::get('registration', [AuthController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [AuthController::class, 'customRegistration'])->name('register.custom'); 
 Route::get('signout', [AuthController::class, 'signOut'])->name('signout');
 Route::get('signoutuser', [AuthController::class, 'signOutUser'])->name('signoutuser');
+
+//get
+// Route::get('change', [AuthController::class, 'signOutUser']);
+
+//forgate password
+Route::get('ubah-password', [AuthController::class, 'forgate'])->name('ubah-password');//1
+
+//profil
 Route::get('profile', [AuthController::class, 'profileadmin'])->name('profile');
 Route::get('edit', [AuthController::class, 'profileedit'])->name('edit');
 Route::put('profileedit/{user}', [AuthController::class, 'update'])->name('profileedit');
 Route::get('profileuser', [AuthController::class, 'profileuser'])->name('profileuser');
 Route::get('edituser', [AuthController::class, 'profileeditUser'])->name('edituser');
 Route::put('profileeditUser/{user}', [AuthController::class, 'updateUser'])->name('profileeditUser');
+
 Route::resource('owner', OwnerController::class);
 Route::get('user/{user}/edit', [OwnerController::class, 'edit'])->name('owner.edit');
 Route::resource('lapangan', LapanganFutsal::class);

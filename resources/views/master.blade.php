@@ -20,6 +20,13 @@
 
     <!-- Custom styles for this template-->
     <link href="/sb_admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <style>
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+       </style>
 </head>
 
 <body>

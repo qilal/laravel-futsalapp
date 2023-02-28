@@ -66,6 +66,9 @@
                                         <div class="text-center">
                                             <a class="small" href="registration">Create an Account!</a>
                                         </div>
+                                        <div class="text-center">
+                                            <a class="small" href="ubah-password">Forgate Password</a>
+                                        </div>
                                 </div>
                             </div>
                         </div>
