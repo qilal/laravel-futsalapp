@@ -66,7 +66,8 @@ class HoursController extends Controller
      */
     public function edit(hours $hour)
     {
-        return view('hours.edit_hours',compact('hour'));    }
+        return view('hours.edit_hours',compact('hour'));    
+    }
 
     /**
      * Update the specified resource in storage.

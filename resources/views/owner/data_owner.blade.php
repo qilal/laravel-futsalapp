@@ -22,12 +22,16 @@
                     </thead>
                     <tfoot>
                         @foreach ($user as $user)
-                            <tr>
+                        <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->nomor_tlp }}</td>
-                                <td></td>
-                                <td><div class="btn btn-primary btn-m"></div></td>
+                                <td>{{ $user->lapangan_id }}</td>
+                                <td>
+                                <form action="{{ route('owner.edit', $user->id) }}" method="GET">
+                                    <button class="btn btn-primary btn-m">edit</button>
+                                </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tfoot>

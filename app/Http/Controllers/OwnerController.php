@@ -7,15 +7,34 @@ use App\Models\User;
 use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+use App\Models\Lapangan;
 class OwnerController extends Controller
 {
     public function index()
     {
         $role = Role::get();
+        $lapangan = Lapangan::get();
         $user = User::where('role_id','LIKE',"2")->get();
         // dd($user);
-        return view('owner.data_owner',compact('user','role'));
+        return view('owner.data_owner',compact('user','role','lapangan'));
+    }
+
+    public function edit(User $user)
+    {
+        
+        return view('owner.edit_owner',compact('user'));
+    }
+
+    public function update(Request $request, User $user)
+    {
+        {       
+            $user->update([
+                'lapangan_id' => $request->lapangan_id
+            ]);
+          
+            return redirect()->route('owner.data_owner',$user->lapangan_id)
+                            ->with('success','Product updated successfully');    
+            }
     }
 
     public function create()
