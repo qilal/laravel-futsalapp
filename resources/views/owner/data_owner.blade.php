@@ -17,7 +17,7 @@
                             <th>Email</th>
                             <th>Nomor Whatsapp</th>
                             <th>Nama Lapangan</th>
-                            <th>Action</th>
+                            {{-- <th>Action</th> --}}
                         </tr>
                     </thead>
                     <tfoot>
@@ -27,11 +27,11 @@
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->nomor_tlp }}</td>
                                 <td>{{ $user->lapangan_id }}</td>
-                                <td>
-                                <form action="{{ route('owner.edit', $user->id) }}" method="GET">
-                                    <button class="btn btn-primary btn-m">edit</button>
-                                </form>
-                                </td>
+                                    {{-- <td>
+                                    <form action="{{ route('owner.edit', $user->id) }}" method="GET">
+                                        <button class="btn btn-primary btn-m">edit</button>
+                                    </form>
+                                    </td> --}}
                             </tr>
                         @endforeach
                     </tfoot>

@@ -38,8 +38,16 @@
                                         placeholder="Repeat Password">
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary bg-gradient-info btn-user btn-block">
-                                Register Account
+                            <div class="form-group">
+                                <label for="lapangan">Lapangan</label>
+                                <select class="form-control " name="lapangan" id="lapangan">
+                                    @foreach ($lapangan as $lapangan)
+                                        <option value="{{ $lapangan->id_lapangan_futsal }}">{{ $lapangan->nama }}</option>
+                                    @endforeach
+                                </select>
+                             </div>
+                            <button type="submit" class="btn btn-primary bg-gradient-info btn-xl">
+                                Create Account
                             </button>
                         </form>
                     </div>

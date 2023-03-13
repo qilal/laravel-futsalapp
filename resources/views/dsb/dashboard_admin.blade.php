@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <img class="img-fluid w-100 rounded" src=" /img/{{ $lapangan->gambar }}" alt="...">
+                        <img class="card-img-top" style="width: 100% , height=225 " src=" /img/{{ $lapangan->gambar }}" alt="...">
                         <div class="card mb-4">
                             <div class="card-header py-3">
                                 <a href="{{ $lapangan->link_alamat }}"><img style="width: 35px; high: 35px;"

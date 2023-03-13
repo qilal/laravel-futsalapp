@@ -12,9 +12,10 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="/sb_admin/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="./sb_admin/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <body>
+
     <div class="container">
         <div class="card-body ">
             <!-- Nested Row within Card Body -->
@@ -27,9 +28,8 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('reset.password.post') }}" method="POST">
+                        <form action="#" method="POST" class="user">
                             @csrf
-                            <input type="hidden" name="token" value="{{ $token }}">
                             <div class="form-group">
                                 <span>Email Address</span>
                                 <input name="email" type="email" class="form-control form-control-user"
@@ -62,20 +62,20 @@
 
     </div>
     <!-- Bootstrap core JavaScript-->
-    <script src="/sb_admin/vendor/jquery/jquery.min.js"></script>
-    <script src="/sb_admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./sb_admin/vendor/jquery/jquery.min.js"></script>
+    <script src="./sb_admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="/sb_admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="./sb_admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="/sb_admin/js/sb-admin-2.min.js"></script>
+    <script src="./sb_admin/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="/sb_admin/vendor/chart.js/Chart.min.js"></script>
+    <script src="./sb_admin/vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="/sb_admin/js/demo/chart-area-demo.js"></script>
-    <script src="/sb_admin/js/demo/chart-pie-demo.js"></script>
+    <script src="./sb_admin/js/demo/chart-area-demo.js"></script>
+    <script src="./sb_admin/js/demo/chart-pie-demo.js"></script>
 </body>
 </html>

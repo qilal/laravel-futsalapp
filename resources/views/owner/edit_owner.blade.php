@@ -8,7 +8,11 @@
                 @csrf
                 @method('PUT')
                 <label for="name">Nama Lapangan</label>
-                <input value="{{ $user->lapangan_id }}" type="text" name="lapangan_id" class="form-control mb-2">
+                <select class="form-control" name="lapangan_id" id="lapangan_id">
+                    @foreach ($lapangan as $lapangan)
+                        <option value="{{ $lapangan->id_lapangan_futsal }}">{{ $lapangan->nama }}</option>
+                    @endforeach
+                </select>
                 <button class="btn btn-primary" type="submit">Save</button>
             </form>
         </div>

@@ -150,24 +150,6 @@ class AuthController extends Controller
         ->withSuccess('You have signed-in');
     }
 
-    // public function dashboard()
-    // {
-    //     if(Auth::check()){
-    //         return redirect()->intended('viewuser')
-    //             ->withSuccess('Signed in');
-    //         // return view('dsb.dashboard_admin');
-    //     }
-
-    //     return redirect("login")->withSuccess('You are not allowed to access');
-    // }
-
-    //   public function viewuser(){
-    //     $lapangans = Lapangan::get();
-    //     $hours = hours::get();
-    //     $days = Days::get();
-    //        return view('tabel',compact('hours','days','lapangans') );
-    // }
-
     public function viewowner()
     {
         return view('owner.data_owner');

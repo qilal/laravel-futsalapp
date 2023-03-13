@@ -47,8 +47,10 @@ Route::get('profileuser', [AuthController::class, 'profileuser'])->name('profile
 Route::get('edituser', [AuthController::class, 'profileeditUser'])->name('edituser');
 Route::put('profileeditUser/{user}', [AuthController::class, 'updateUser'])->name('profileeditUser');
 
+// owner/admin
 Route::resource('owner', OwnerController::class);
 Route::get('user/{user}/edit', [OwnerController::class, 'edit'])->name('owner.edit');
+
 Route::resource('lapangan', LapanganFutsal::class);
 Route::get('dashboard', [LapanganFutsal::class, 'dashboard'])->middleware('checkRole:admin,super-admin');
 Route::resource('typelapangan', TypeLapanganController::class);

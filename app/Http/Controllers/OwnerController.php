@@ -21,25 +21,26 @@ class OwnerController extends Controller
 
     public function edit(User $user)
     {
-        
-        return view('owner.edit_owner',compact('user'));
+        $lapangan = Lapangan::get();   
+        return view('owner.edit_owner',compact('user','lapangan'));
     }
 
     public function update(Request $request, User $user)
     {
-        {       
+               
             $user->update([
-                'lapangan_id' => $request->lapangan_id
+                $user->lapangan_id => $request->id_lapangan_futsal
             ]);
-          
-            return redirect()->route('owner.data_owner',$user->lapangan_id)
+        //   dd($user);
+            return redirect()->route('owner.index',$user->lapangan_id)
                             ->with('success','Product updated successfully');    
-            }
+            
     }
 
     public function create()
     {
-        return view('owner.tambah_owner');
+        $lapangan = Lapangan::get(); 
+        return view('owner.tambah_owner',compact('lapangan'));
     }
 
     public function store(Request $request)
@@ -47,12 +48,13 @@ class OwnerController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'password' => 'required|min:6',    
         ]);
+        // $user->lapangan_id = $request->lapangan;
         $data = $request->all(); 
         $user = $this->createOwner($data);
         // dd( $check);
-        Auth::loginUsingId($user->id);
+        // Auth::loginUsingId($user->id);
         return redirect()->intended('/owner')
         ->withSuccess('You have signed-in');
     }

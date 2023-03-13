@@ -1,12 +1,12 @@
               <!-- Sidebar -->
-        <ul class="no-print navbar-nav bg-gradient-primary sidebar bg-gradient-info sidebar-dark accordion" id="accordionSidebar">
+        <ul class="no-print navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon fa-pulse">
                     <i class="fa fa-futbol"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Futsal APP <sup>Admin {{ Auth::user()->name }}</sup></div>
+                <div class="sidebar-brand-text mx-3">Futsal APP <span>Admin {{ Auth::user()->name }}</span></div>
             </a>
 
             <!-- Divider -->

@@ -15,6 +15,10 @@ class User extends Authenticatable
     public function role(){
         return $this->belongsTo(Role::class);
     }
+    
+    public function lapangan(){
+        return $this->belongsTo(Lapangan::class);
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -27,6 +31,7 @@ class User extends Authenticatable
         'password',
         'role_id',
         'foto',
+        'lapangan_id',
     ];
 
     /**
