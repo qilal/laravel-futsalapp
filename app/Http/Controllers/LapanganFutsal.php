@@ -67,7 +67,8 @@ class LapanganFutsal extends Controller
             'link_alamat' => 'required',
             'nomor_tlp' => 'required',
             'jumlah_lapangan' => 'required',
-            'jumlah_bola' => 'required'
+            'jumlah_bola' => 'required',
+            'detail_lapangan' => 'required'
         ]);
       
         $input =  $request->all();
@@ -98,7 +99,8 @@ class LapanganFutsal extends Controller
             'gambar' => 'required',
             'nomor_tlp' => 'required',
             'jumlah_lapangan' => 'required',
-            'jumlah_bola' => 'required'
+            'jumlah_bola' => 'required',
+            'detail_lapangan' => 'required'
         ]);
         $lapangan = new Lapangan ();
         $lapangan->nama = $request->nama;

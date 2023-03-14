@@ -23,6 +23,7 @@
                                 <h6 class="m-0 font-weight-bold text-primary">JUMLAH LAPANGAN
                                     : {{ $lapangan->jumlah_lapangan }}</h6>
                                 <h6 class="m-0 font-weight-bold text-primary">SEDIA BOLA : {{ $lapangan->jumlah_bola }}</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Detail : <p>{{ $lapangan->detail_lapangan }}</p></h6>
                         <div class="card-footer">        
                             <a href="{{ route('tabel.user', $lapangan->id_lapangan_futsal) }}"
                                     class="container btn btn-info btn-icon-split">

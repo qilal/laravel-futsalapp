@@ -28,6 +28,9 @@
                         <label for="jumlah bola">Jumlah Bola</label>
                         <input type="number" value="{{ $lapangan->jumlah_bola }}" name="jumlah_bola"
                             class="form-control mb-2">
+                            <label for="jumlah bola">Jumlah Bola</label>
+                        <input type="text" value="{{ $lapangan->detail_lapangan }}" name="detail_lapangan"
+                            class="form-control mb-2">
                         <button class="btn btn-primary" type="submit">Save</button>
                 </form>
             </div>

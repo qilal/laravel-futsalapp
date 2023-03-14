@@ -20,6 +20,8 @@
                     <input type="number" name="jumlah_lapangan" class="form-control mb-2">
                     <label for="jumlah bola">Jumlah Bola</label>
                     <input type="number" name="jumlah_bola" class="form-control mb-2">
+                    <label for="jumlah bola">Detail Lapangan</label>
+                    <input type="text" name="detail_lapangan" class="form-control mb-2">
                     <button class="btn btn-primary" type="submit">Create</button>
                 </form>
             </div>
