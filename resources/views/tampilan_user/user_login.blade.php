@@ -19,19 +19,18 @@
                                 <h6 class="m-0 font-weight-normal text">{{ $lapangan->alamat }}</h6>
                             </div>
                             <div class="card-body">
-                                <h6 class="m-0 font-weight-bold text-primary">KONTAK : {{ $lapangan->nomor_tlp }}</h6>
-                                <h6 class="m-0 font-weight-bold text-primary">TIPE LAPANGAN : {{ $lapangan->jumlah_bola }}
-                                </h6>
+                                <a href="https://wa.me/{{ $lapangan->nomor_tlp }}" class="btn btn-succes m-0 font-weight-bold"> KONTAK :{{ $lapangan->nomor_tlp }}</a>
+                                {{-- <h6 class="m-0 font-weight-bold text-primary">TIPE LAPANGAN : {{ $lapangan->jumlah_bola }}
+                                </h6> --}}
                                 <h6 class="m-0 font-weight-bold text-primary">JUMLAH LAPANGAN
                                     : {{ $lapangan->jumlah_lapangan }}</h6>
                                 <h6 class="m-0 font-weight-bold text-primary">SEDIA BOLA : {{ $lapangan->jumlah_bola }}</h6>
-                                <a href="{{ route('tabel.user', $lapangan->id_lapangan_futsal) }}"
-                                    class="btn btn-info btn-icon-split">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-info-circle"></i>
-                                    </span>
+                        <div class="card-footer">        
+                            <a href="{{ route('tabel.user', $lapangan->id_lapangan_futsal) }}"
+                                    class="container btn btn-info btn-icon-split">
                                     <span class="text">Pesan Sekarang</span>
                                 </a>
+                            </div>
                             </div>
                         </div>
                     </div>

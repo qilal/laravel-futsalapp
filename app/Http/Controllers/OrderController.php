@@ -39,6 +39,9 @@ class OrderController extends Controller
 
     public function GetAllOrder(){
         $orders = Order::where('user_id',Auth::user()->id)->get();
+        // $OrderDetail = OrderDetail::whereHas('order', function ($query) {
+        //     return $query->where('status', '=', 'Paid');
+        // })->with('hour','day')->get();
         return view('tampilan_user.order',compact('orders'));
     }
 

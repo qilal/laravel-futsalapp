@@ -14,7 +14,7 @@
             <th>Total Item</th>
             <th>Total Harga</th>
             <th>Status</th>
-            <th>Action</th>
+            {{-- <th>Action</th> --}}
         </tr>
     </thead>
     <tbody>
@@ -29,11 +29,11 @@
                     <span class="badge badge-success">Sudah Bayar</span>
                 <?php } ?>
             </td>
-            <td>
-                <a href="{{ route('order.detail', $order->id) }}">
-                    <button type="button" class="btn btn-success">Lihat</button>
-                </a>
-            </td>
+                {{-- <td>
+                    <a href="{{ route('order.detail', $order->id) }}">
+                        <button type="button" class="btn btn-success">Lihat</button>
+                    </a>
+                </td> --}}
         </tr>
     @endforeach
     </tbody>
