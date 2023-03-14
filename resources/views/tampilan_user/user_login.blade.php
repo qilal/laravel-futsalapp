@@ -19,9 +19,7 @@
                                 <h6 class="m-0 font-weight-normal text">{{ $lapangan->alamat }}</h6>
                             </div>
                             <div class="card-body">
-                                <a href="https://wa.me/{{ $lapangan->nomor_tlp }}" class="btn btn-succes m-0 font-weight-bold"> KONTAK :{{ $lapangan->nomor_tlp }}</a>
-                                {{-- <h6 class="m-0 font-weight-bold text-primary">TIPE LAPANGAN : {{ $lapangan->jumlah_bola }}
-                                </h6> --}}
+                                <a href="https://wa.me/{{ $lapangan->nomor_tlp }}" class="btn font-weight-bold"> KONTAK :{{ $lapangan->nomor_tlp }}</a>
                                 <h6 class="m-0 font-weight-bold text-primary">JUMLAH LAPANGAN
                                     : {{ $lapangan->jumlah_lapangan }}</h6>
                                 <h6 class="m-0 font-weight-bold text-primary">SEDIA BOLA : {{ $lapangan->jumlah_bola }}</h6>
