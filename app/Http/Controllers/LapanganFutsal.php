@@ -116,6 +116,7 @@ class LapanganFutsal extends Controller
         $lapangan->nomor_tlp = $request->nomor_tlp;
         $lapangan->jumlah_lapangan = $request->jumlah_lapangan;
         $lapangan->jumlah_bola = $request->jumlah_bola;
+        $lapangan->detail_lapangan = $request->detail_lapangan;
         $lapangan->save();
         return redirect()->route('lapangan.index');
     }

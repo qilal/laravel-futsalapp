@@ -22,8 +22,8 @@
                                 <a href="https://wa.me/{{ $lapangan->nomor_tlp }}" class="btn font-weight-bold"> KONTAK :{{ $lapangan->nomor_tlp }}</a>
                                 <h6 class="m-0 font-weight-bold text-primary">JUMLAH LAPANGAN
                                     : {{ $lapangan->jumlah_lapangan }}</h6>
-                                <h6 class="m-0 font-weight-bold text-primary">SEDIA BOLA : {{ $lapangan->jumlah_bola }}</h6>
-                                <h6 class="m-0 font-weight-bold text-primary">Detail : <p>{{ $lapangan->detail_lapangan }}</p></h6>
+                                <h6 class="m-0 font-weight-bold text-primary">SEDIA BOLA :</h6> <span class="text">{{ $lapangan->jumlah_bola }}</span>
+                                <h6 class="m-0 font-weight-bold text-primary">Detail : </h6><p>{{ $lapangan->detail_lapangan }}</p>
                         <div class="card-footer">        
                             <a href="{{ route('tabel.user', $lapangan->id_lapangan_futsal) }}"
                                     class="container btn btn-info btn-icon-split">
