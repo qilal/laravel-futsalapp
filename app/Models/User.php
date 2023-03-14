@@ -7,32 +7,29 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    public function role(){
-        return $this->belongsTo(Role::class);
+    protected $guarded = [];
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class,'role_id','id');
     }
     
-    public function lapangan(){
-        return $this->belongsTo(Lapangan::class);
+    public function lapangan()
+    {
+        return $this->belongsTo(Lapangan::class,'lapangan_id','id_lapangan_futsal');
     }
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'nomor_tlp',
-        'password',
-        'role_id',
-        'foto',
-        'lapangan_id',
-    ];
+    
 
     /**
      * The attributes that should be hidden for serialization.

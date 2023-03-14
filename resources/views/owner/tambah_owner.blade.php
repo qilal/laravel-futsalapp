@@ -40,7 +40,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="lapangan">Lapangan</label>
-                                <select class="form-control " name="lapangan" id="lapangan">
+                                <select class="form-control " name="lapangan_id" id="lapangan">
                                     @foreach ($lapangan as $lapangan)
                                         <option value="{{ $lapangan->id_lapangan_futsal }}">{{ $lapangan->nama }}</option>
                                     @endforeach

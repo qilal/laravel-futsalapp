@@ -26,7 +26,7 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->nomor_tlp }}</td>
-                                <td>{{ $user->lapangan_id }}</td>
+                                <td>{{ $user->lapangan->nama }}</td>
                                     {{-- <td>
                                     <form action="{{ route('owner.edit', $user->id) }}" method="GET">
                                         <button class="btn btn-primary btn-m">edit</button>
